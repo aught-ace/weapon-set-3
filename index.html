@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta
+            name="viewport"
+            content="width=device-width">
+        <meta name="description" content="スプラトゥーン3のブキセットを検索する事ができます。" />
+        <title>ブキセット3</title>
+	    <link href="images/icon.PNG" rel="icon">
+	    <link href="images/icon.PNG" rel="apple-touch-icon">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>ブキセット<span class="yellow">3</span></h1>
+            <div id="input">
+                <div class="type-filter">
+                    <label><input id="all" name="type" type="radio" checked>M</label>
+                    <label><input id="shooter" name="type" type="radio"><img src="images/main/spla-shooter.PNG"></label>
+                    <label><input id="roller" name="type" type="radio"><img src="images/main/spla-roller.PNG"></label>
+                    <label><input id="charger" name="type" type="radio"><img src="images/main/spla-charger.PNG"></label>
+                    <label><input id="slosher" name="type" type="radio"><img src="images/main/bucket-slosher.PNG"></label>
+                    <label><input id="spinner" name="type" type="radio"><img src="images/main/barrel-spinner.PNG"></label>
+                    <label><input id="maneuver" name="type" type="radio"><img src="images/main/spla-maneuver.PNG"></label>
+                    <label><input id="shelter" name="type" type="radio"><img src="images/main/para-shelter.PNG"></label>
+                    <label><input id="blaster" name="type" type="radio"><img src="images/main/hot-blaster.PNG"></label>
+                    <label><input id="brush" name="type" type="radio"><img src="images/main/pablo.PNG"></label>
+                    <label><input id="stringer" name="type" type="radio"><img src="images/main/tri-stringer.PNG"></label>
+                    <label><input id="wiper" name="type" type="radio"><img src="images/main/dribe-wiper.PNG"></label>
+                </div>
+                <div class="sub-filter">
+                    <label><input id="all" name="sub" type="radio" checked>Sb</label>
+                    <label><input id="splash-bomb" name="sub" type="radio"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></label>
+                    <label><input id="kyuban-bomb" name="sub" type="radio"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></label>
+                    <label><input id="quick-bomb" name="sub" type="radio"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></label>
+                    <label><input id="sprinkler" name="sub" type="radio"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></label>
+                    <label><input id="splash-shield" name="sub" type="radio"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></label>
+                    <label><input id="tansan-bomb" name="sub" type="radio"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></label>
+                    <label><input id="curling-bomb" name="sub" type="radio"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></label>
+                    <label><input id="robot-bomb" name="sub" type="radio"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></label>
+                    <label><input id="jump-beacon" name="sub" type="radio"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></label>
+                    <label><input id="point-sensor" name="sub" type="radio"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></label>
+                    <label><input id="trap" name="sub" type="radio"><img alt="トラップ" src="images/sub/trap.PNG"></label>
+                    <label><input id="poison-mist" name="sub" type="radio"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></label>
+                    <label><input id="line-marker" name="sub" type="radio"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></label>
+                    <label><input id="torpedo" name="sub" type="radio"><img alt="トーピード" src="images/sub/torpedo.PNG"></label>
+                </div>
+                <div class="special-filter">
+                    <label><input id="all" name="special" type="radio" checked>Sp</label>
+                    <label><input id="ultra-shot" name="special" type="radio"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></label>
+                    <label><input id="great-barrier" name="special" type="radio"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></label>
+                    <label><input id="shokuwander" name="special" type="radio"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></label>
+                    <label><input id="multi-missile" name="special" type="radio"><img alt="マルチミサイル" src="images/special/multi-missile.PNG"></label>
+                    <label><input id="ame-furashi" name="special" type="radio"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></label>
+                    <label><input id="nice-dama" name="special" type="radio"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></label>
+                    <label><input id="hop-sonar" name="special" type="radio"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></label>
+                    <label><input id="kyuinki" name="special" type="radio"><img alt="キューインキ" src="images/special/kyuinki.PNG"></label>
+                    <label><input id="megaphone-laser-5-1ch" name="special" type="radio"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></label>
+                    <label><input id="jet-pack" name="special" type="radio"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></label>
+                    <label><input id="ultra-hanko" name="special" type="radio"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></label>
+                    <label><input id="kani-tank" name="special" type="radio"><img alt="カニタンク" src="images/special/kani-tank.PNG"></label>
+                    <label><input id="same-ride" name="special" type="radio"><img alt="サメライド" src="images/special/same-ride.PNG"></label>
+                    <label><input id="triple-tornado" name="special" type="radio"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></label>
+                    <label><input id="energy-stand" name="special" type="radio"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></label>
+                    <label><input id="dekoi-chirashi" name="special" type="radio"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></label>
+                    <label><input id="teiou-ika" name="special" type="radio"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></label>
+                    <label><input id="ultra-chakuchi" name="special" type="radio"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></label>
+                    <label><input id="suminaga-sheet" name="special" type="radio"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></label>
+                </div>
+                <div class="search">
+                    <button id="clear">W</button>
+                    <input id="search" type="text">
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/spla-shooter.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">スプラシューター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/spla-shooter-collab.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">スプラシューターコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/spla-shooter-kou.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></button>
+                <button class="name">スプラシューター煌</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/wakaba-shooter.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">わかばシューター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/momiji-shooter.PNG"></button>
+                <button class="sub"><img alt="トーピード" src="images/sub/torpedo.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">もみじシューター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/sharp-marker.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">シャープマーカー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/sharp-marker-neo.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">シャープマーカーネオ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/sharp-marker-geck.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></button>
+                <button class="name">シャープマーカーGECK</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/bold-marker.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></button>
+                <button class="name">ボールドマーカー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/bold-marker-neo.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">ボールドマーカーネオ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/promodeler-mg.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="サメライド" src="images/special/same-ride.PNG"></button>
+                <button class="name">プロモデラーMG</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/promodeler-rg.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></button>
+                <button class="name">プロモデラーRG</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/promodeler-sai.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></button>
+                <button class="name">プロモデラー彩</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/52-gallon.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">.52ガロン</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/52-gallon-deco.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></button>
+                <button class="name">.52ガロンデコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/96-gallon.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">.96ガロン</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/96-gallon-deco.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></button>
+                <button class="name">.96ガロンデコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/96-gallon-sou.PNG"></button>
+                <button class="sub"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></button>
+                <button class="special"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></button>
+                <button class="name">.96ガロン爪</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/n-zap-85.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></button>
+                <button class="name">N-ZAP85</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/n-zap-89.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></button>
+                <button class="name">N-ZAP89</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/prime-shooter.PNG"></button>
+                <button class="sub"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">プライムシューター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/prime-shooter-collab.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></button>
+                <button class="name">プライムシューターコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/prime-shooter-frzn.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="マルチミサイル" src="images/special/multi-missile.PNG"></button>
+                <button class="name">プライムシューターFRZN</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/jet-sweeper.PNG"></button>
+                <button class="sub"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">ジェットスイーパー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/jet-sweeper-custom.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></button>
+                <button class="name">ジェットスイーパーカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/jet-sweeper-cobr.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></button>
+                <button class="name">ジェットスイーパーCOBR</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/space-shooter.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">スペースシューター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/space-shooter-collab.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
+                <button class="name">スペースシューターコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/l3-reelgun.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">L3リールガン</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/l3-reelgun-d.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></button>
+                <button class="name">L3リールガンD</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/l3-reelgun-haku.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
+                <button class="name">L3リールガン箔</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/h3-reelgun.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></button>
+                <button class="name">H3リールガン</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/h3-reelgun-d.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">H3リールガンD</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/h3-reelgun-snak.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">H3リールガンSNAK</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/bottle-geyser.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">ボトルガイザー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/bottle-geyser-foil.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></button>
+                <button class="name">ボトルガイザーフォイル</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/hero-shooter-replica.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">ヒーローシューター レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/octo-shooter-replica.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">オクトシューター レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/spla-roller.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">スプラローラー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/spla-roller-collab.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></button>
+                <button class="name">スプラローラーコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/carbon-roller.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">カーボンローラー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/carbon-roller-deco.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">カーボンローラーデコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/carbon-roller-angl.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></button>
+                <button class="name">カーボンローラーANGL</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/dynamo-roller.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></button>
+                <button class="name">ダイナモローラー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/dynamo-roller-tesla.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></button>
+                <button class="name">ダイナモローラーテスラ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/dynamo-roller-mei.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">ダイナモローラー冥</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/variable-roller.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="マルチミサイル" src="images/special/multi-missile.PNG"></button>
+                <button class="name">ヴァリアブルローラー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/variable-roller-foil.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></button>
+                <button class="name">ヴァリアブルローラーフォイル</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/wide-roller.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">ワイドローラー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/wide-roller-collab.PNG"></button>
+                <button class="sub"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></button>
+                <button class="special"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></button>
+                <button class="name">ワイドローラーコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/wide-roller-waku.PNG"></button>
+                <button class="sub"><img alt="トーピード" src="images/sub/torpedo.PNG"></button>
+                <button class="special"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></button>
+                <button class="name">ワイドローラー惑星</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/spla-charger.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">スプラチャージャー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/spla-charger-collab.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">スプラチャージャーコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/spla-charger-frst.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">スプラチャージャーFRST</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/spla-scope.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">スプラスコープ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/spla-scope-collab.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">スプラスコープコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/spla-scope-frst.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">スプラスコープFRST</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/squiclean-alpha.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">スクイックリンα</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/squiclean-beta.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">スクイックリンβ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/liter-4k.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">リッター4K</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/liter-4k-custom.jpg"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></button>
+                <button class="name">リッター4Kカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/4k-scope.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">4Kスコープ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/4k-scope-custom.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></button>
+                <button class="name">4Kスコープカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/14shiki-takedsutsuju-kou.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">14式竹筒銃・甲</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/14shiki-takedsutsuju-otsu.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></button>
+                <button class="name">14式竹筒銃・乙</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/soy-tuber.PNG"></button>
+                <button class="sub"><img alt="トーピード" src="images/sub/torpedo.PNG"></button>
+                <button class="special"><img alt="マルチミサイル" src="images/special/multi-missile.PNG"></button>
+                <button class="name">ソイチューバー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/soy-tuber-custom.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></button>
+                <button class="name">ソイチューバーカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/r-pen-5h.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></button>
+                <button class="name">R-PEN/5H</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/r-pen-5b.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></button>
+                <button class="name">R-PEN/5B</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/bucket-slosher.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">バケットスロッシャー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/bucket-slosher-deco.PNG"></button>
+                <button class="sub"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">バケットスロッシャーデコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/hissen.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
+                <button class="name">ヒッセン</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/hissen-hue.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></button>
+                <button class="name">ヒッセン・ヒュー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/hissen-ash.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></button>
+                <button class="name">ヒッセンASH</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/screw-slosher.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></button>
+                <button class="name">スクリュースロッシャー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/screw-slosher-neo.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">スクリュースロッシャーネオ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/over-flosher.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></button>
+                <button class="name">オーバーフロッシャー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/over-flosher-deco.PNG"></button>
+                <button class="sub"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></button>
+                <button class="special"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></button>
+                <button class="name">オーバーフロッシャーデコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/explosher.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></button>
+                <button class="name">エクスプロッシャー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/explosher-custom.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></button>
+                <button class="name">エクスプロッシャーカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/moplin.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="サメライド" src="images/special/same-ride.PNG"></button>
+                <button class="name">モップリン</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/moplin-d.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">モップリンD</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/moplin-kaku.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">モップリン角</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/barrel-spinner.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">バレルスピナー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/barrel-spinner-deco.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></button>
+                <button class="name">バレルスピナーデコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/spla-spinner.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></button>
+                <button class="name">スプラスピナー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/spla-spinner-collab.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">スプラスピナーコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/spla-spinner-pytn.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">スプラスピナーPYTN</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/hydrant.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></button>
+                <button class="name">ハイドラント</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/hydrant-custom.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></button>
+                <button class="name">ハイドラントカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/hydrant-atsu.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">ハイドラント圧</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/kugel-schreiber.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
+                <button class="name">クーゲルシュライバー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/kugel-schreiber-hue.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">クーゲルシュライバー・ヒュー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/nautilus-47.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></button>
+                <button class="name">ノーチラス47</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/nautilus-79.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></button>
+                <button class="name">ノーチラス79</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/examiner.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></button>
+                <button class="name">イグザミナー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/examiner-hue.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">イグザミナー・ヒュー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/spla-maneuver.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">スプラマニューバー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/spla-maneuver-collab.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></button>
+                <button class="name">スプラマニューバーコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/spla-maneuver-you.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">スプラマニューバー耀</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/spattery.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></button>
+                <button class="name">スパッタリー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/spattery-hue.PNG"></button>
+                <button class="sub"><img alt="トーピード" src="images/sub/torpedo.PNG"></button>
+                <button class="special"><img alt="サメライド" src="images/special/same-ride.PNG"></button>
+                <button class="name">スパッタリー・ヒュー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/spattery-owl.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">スパッタリーOWL</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/kelvin-525.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></button>
+                <button class="name">ケルビン525</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/kelvin-525-deco.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">ケルビン525デコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/dual-sweeper.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">デュアルスイーパー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/dual-sweeper-custom.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></button>
+                <button class="name">デュアルスイーパーカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/dual-sweeper-tei.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></button>
+                <button class="name">デュアルスイーパー蹄</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/quad-hopper-black.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="サメライド" src="images/special/same-ride.PNG"></button>
+                <button class="name">クアッドホッパーブラック</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/quad-hopper-white.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">クアッドホッパーホワイト</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/gaen-ff.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">ガエンFF</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/gaen-ff-custom.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">ガエンFFカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/para-shelter.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">パラシェルター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/para-shelter-solare.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
+                <button class="name">パラシェルターソレーラ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/camping-shelter.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">キャンピングシェルター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/camping-shelter-solare.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">キャンピングシェルターソレーラ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/camping-shelter-crem.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></button>
+                <button class="name">キャンピングシェルターCREM</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/spy-gadget.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="サメライド" src="images/special/same-ride.PNG"></button>
+                <button class="name">スパイガジェット</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/spy-gadget-solare.PNG"></button>
+                <button class="sub"><img alt="トーピード" src="images/sub/torpedo.PNG"></button>
+                <button class="special"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></button>
+                <button class="name">スパイガジェットソレーラ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/spy-gadget-ryo.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">スパイガジェット繚</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/24shiki-harikaegasa-kou.PNG"></button>
+                <button class="sub"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">24式張替傘・甲</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/24shiki-harikaegasa-otsu.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></button>
+                <button class="name">24式張替傘・乙</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/hot-blaster.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">ホットブラスター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/hot-blaster-custom.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></button>
+                <button class="name">ホットブラスターカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/hot-blaster-en.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">ホットブラスター艶</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/long-blaster.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">ロングブラスター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/long-blaster-custom.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></button>
+                <button class="name">ロングブラスターカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/nova-blaster.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">ノヴァブラスター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/nova-blaster-neo.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></button>
+                <button class="name">ノヴァブラスターネオ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/crash-blaster.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">クラッシュブラスター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/crash-blaster-neo.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></button>
+                <button class="name">クラッシュブラスターネオ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/rapid-blaster.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">ラピッドブラスター</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/rapid-blaster-deco.PNG"></button>
+                <button class="sub"><img alt="トーピード" src="images/sub/torpedo.PNG"></button>
+                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
+                <button class="name">ラピッドブラスターデコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/r-blaster-elite.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">Rブラスターエリート</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/r-blaster-elite-deco.PNG"></button>
+                <button class="sub"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">Rブラスターエリートデコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/r-blaster-elite-wntr.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></button>
+                <button class="name">RブラスターエリートWNTR</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/s-blast-92.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="サメライド" src="images/special/same-ride.PNG"></button>
+                <button class="name">S-BLAST92</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/s-blast-91.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></button>
+                <button class="name">S-BLAST91</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="brush"><img src="images/main/pablo.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">パブロ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="brush"><img src="images/main/pablo-hue.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></button>
+                <button class="name">パブロ・ヒュー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="brush"><img src="images/main/hokusai.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">ホクサイ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="brush"><img src="images/main/hokusai-hue.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></button>
+                <button class="name">ホクサイ・ヒュー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="brush"><img src="images/main/hokusai-sui.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></button>
+                <button class="name">ホクサイ彗</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="brush"><img src="images/main/vincent.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">フィンセント</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="brush"><img src="images/main/vincent-hue.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="マルチミサイル" src="images/special/multi-missile.PNG"></button>
+                <button class="name">フィンセント・ヒュー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="brush"><img src="images/main/vincent-brnz.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">フィンセントBRNZ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="stringer"><img src="images/main/tri-stringer.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">トライストリンガー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="stringer"><img src="images/main/tri-stringer-collab.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></button>
+                <button class="name">トライストリンガーコラボ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="stringer"><img src="images/main/tri-stringer-tou.PNG"></button>
+                <button class="sub"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></button>
+                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
+                <button class="name">トライストリンガー燈</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="stringer"><img src="images/main/lact-450.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="マルチミサイル" src="images/special/multi-missile.PNG"></button>
+                <button class="name">LACT-450</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="stringer"><img src="images/main/lact-450-deco.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="サメライド" src="images/special/same-ride.PNG"></button>
+                <button class="name">LACT-450デコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="stringer"><img src="images/main/lact-450-milk.PNG"></button>
+                <button class="sub"><img alt="トーピード" src="images/sub/torpedo.PNG"></button>
+                <button class="special"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></button>
+                <button class="name">LACT-450MILK</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="stringer"><img src="images/main/fluid-v.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></button>
+                <button class="name">フルイドV</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="stringer"><img src="images/main/fluid-v-custom.PNG"></button>
+                <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">フルイドVカスタム</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="wiper"><img src="images/main/dribe-wiper.PNG"></button>
+                <button class="sub"><img alt="トーピード" src="images/sub/torpedo.PNG"></button>
+                <button class="special"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></button>
+                <button class="name">ドライブワイパー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="wiper"><img src="images/main/dribe-wiper-deco.PNG"></button>
+                <button class="sub"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></button>
+                <button class="special"><img alt="マルチミサイル" src="images/special/multi-missile.PNG"></button>
+                <button class="name">ドライブワイパーデコ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="wiper"><img src="images/main/dribe-wiper-rust.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">ドライブワイパーRUST</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="wiper"><img src="images/main/jimu-wiper.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">ジムワイパー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="wiper"><img src="images/main/jimu-wiper-hue.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">ジムワイパー・ヒュー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="wiper"><img src="images/main/jimu-wiper-fu.PNG"></button>
+                <button class="sub"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></button>
+                <button class="special"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></button>
+                <button class="name">ジムワイパー封</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="wiper"><img src="images/main/dental-wiper-mint.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">デンタルワイパーミント</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="wiper"><img src="images/main/dental-wiper-sumi.PNG"></button>
+                <button class="sub"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></button>
+                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
+                <button class="name">デンタルワイパースミ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shooter"><img src="images/main/order-shooter-replica.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></button>
+                <button class="name">オーダーシューター レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="roller"><img src="images/main/order-roller-replica.PNG"></button>
+                <button class="sub"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></button>
+                <button class="special"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></button>
+                <button class="name">オーダーローラー レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="charger"><img src="images/main/order-charger-replica.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">オーダーチャージャー レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="slosher"><img src="images/main/order-slosher-replica.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">オーダースロッシャー レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/order-spiner-replica.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></button>
+                <button class="name">オーダースピナー レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="maneuver"><img src="images/main/order-maneuver-replica.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="カニタンク" src="images/special/kani-tank.PNG"></button>
+                <button class="name">オーダーマニューバー レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="shelter"><img src="images/main/order-shelter-replica.PNG"></button>
+                <button class="sub"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></button>
+                <button class="special"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></button>
+                <button class="name">オーダーシェルター レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="blaster"><img src="images/main/order-blaster-replica.PNG"></button>
+                <button class="sub"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">オーダーブラスター レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="brush"><img src="images/main/order-brush-replica.PNG"></button>
+                <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">オーダーブラシ レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="stringer"><img src="images/main/order-stringer-replica.PNG"></button>
+                <button class="sub"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></button>
+                <button class="special"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></button>
+                <button class="name">オーダーストリンガー レプリカ</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="wiper"><img src="images/main/order-wiper-replica.PNG"></button>
+                <button class="sub"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></button>
+                <button class="special"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></button>
+                <button class="name">オーダーワイパー レプリカ</button>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
