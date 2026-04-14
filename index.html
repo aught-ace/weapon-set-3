@@ -5,7 +5,7 @@
         <meta
             name="viewport"
             content="width=device-width">
-        <meta name="description" content="スプラトゥーン3のブキセットを検索する事ができます。" />
+        <meta name="description" content="スプラトゥーン3のブキセットを検索して特徴を表示します。" />
         <title>ブキセット3</title>
 	    <link href="images/icon.PNG" rel="icon">
 	    <link href="images/icon.PNG" rel="apple-touch-icon">
@@ -13,7 +13,11 @@
     </head>
     <body>
         <header>
-            <h1>ブキセット<span class="yellow">3</span></h1>
+            <div id="title">
+                <h1>ブキセット<span class="yellow">3</span></h1>
+                <p>スプラトゥーン3 Ver.11 対応</p>
+            </div>
+            <h2>フィルターと検索</h2>
             <div id="input">
                 <div class="type-filter">
                     <label><input id="all" name="type" type="radio" checked>M</label>
@@ -68,13 +72,14 @@
                     <label><input id="ultra-chakuchi" name="special" type="radio"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></label>
                     <label><input id="suminaga-sheet" name="special" type="radio"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></label>
                 </div>
-                <div class="search">
+                <div id="word-search">
                     <button id="clear">W</button>
                     <input id="search" type="text">
                 </div>
             </div>
         </header>
         <main>
+            <h2>結果</h2>
             <div class="weapon-set">
                 <button class="main" data-type="shooter"><img src="images/main/spla-shooter.PNG"></button>
                 <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
@@ -367,7 +372,7 @@
                 <button class="main" data-type="roller"><img src="images/main/wide-roller-waku.PNG"></button>
                 <button class="sub"><img alt="トーピード" src="images/sub/torpedo.PNG"></button>
                 <button class="special"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></button>
-                <button class="name">ワイドローラー惑星</button>
+                <button class="name">ワイドローラー惑</button>
             </div>
             <div class="weapon-set">
                 <button class="main" data-type="charger"><img src="images/main/spla-charger.PNG"></button>
@@ -610,18 +615,6 @@
                 <button class="name">ハイドラント圧</button>
             </div>
             <div class="weapon-set">
-                <button class="main" data-type="spinner"><img src="images/main/kugel-schreiber.PNG"></button>
-                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
-                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
-                <button class="name">クーゲルシュライバー</button>
-            </div>
-            <div class="weapon-set">
-                <button class="main" data-type="spinner"><img src="images/main/kugel-schreiber-hue.PNG"></button>
-                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
-                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
-                <button class="name">クーゲルシュライバー・ヒュー</button>
-            </div>
-            <div class="weapon-set">
                 <button class="main" data-type="spinner"><img src="images/main/nautilus-47.PNG"></button>
                 <button class="sub"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></button>
                 <button class="special"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></button>
@@ -632,6 +625,18 @@
                 <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
                 <button class="special"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></button>
                 <button class="name">ノーチラス79</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/kugel-schreiber.PNG"></button>
+                <button class="sub"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></button>
+                <button class="special"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></button>
+                <button class="name">クーゲルシュライバー</button>
+            </div>
+            <div class="weapon-set">
+                <button class="main" data-type="spinner"><img src="images/main/kugel-schreiber-hue.PNG"></button>
+                <button class="sub"><img alt="トラップ" src="images/sub/trap.PNG"></button>
+                <button class="special"><img alt="キューインキ" src="images/special/kyuinki.PNG"></button>
+                <button class="name">クーゲルシュライバー・ヒュー</button>
             </div>
             <div class="weapon-set">
                 <button class="main" data-type="spinner"><img src="images/main/examiner.PNG"></button>
@@ -1114,6 +1119,839 @@
                 <button class="name">オクタシューター レプリカ</button>
             </div>
         </main>
+        <div id="description" class="none">
+            <div class="main"><img src=""><h2></h2><p></p></div>
+            <div class="sub"><img src=""><h2></h2><p></p></div>
+            <div class="special"><img src=""><h2></h2><p></p></div>
+        </div>
+        <div id="description-store" class="none">
+            <div>
+                <h2>スプラシューター</h2>
+                <p><mark>標準的</mark>な性能。</p>
+            </div>
+            <div>
+                <h2>スプラシューターコラボ</h2>
+                <p><mark>標準的</mark>な性能。</p>
+            </div>
+            <div>
+                <h2>スプラシューター煌</h2>
+                <p><mark>標準的</mark>な性能。</p>
+            </div>
+            <div>
+                <h2>わかばシューター</h2>
+                <p><mark>インク容量が多く</mark>塗りやすい。</p>
+            </div>
+            <div>
+                <h2>もみじシューター</h2>
+                <p><mark>インク容量が多く</mark>塗りやすい。</p>
+            </div>
+            <div>
+                <h2>シャープマーカー</h2>
+                <p><mark>拡散がなく</mark>連射が速い。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>シャープマーカーネオ</h2>
+                <p><mark>拡散がなく</mark>連射が速い。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>シャープマーカーGECK</h2>
+                <p><mark>拡散がなく</mark>連射が速い。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ボールドマーカー</h2>
+                <p><mark>攻撃力が高め</mark>で連射が速い。射程が非常に短く拡散が大きい。</p>
+            </div>
+            <div>
+                <h2>ボールドマーカーネオ</h2>
+                <p><mark>攻撃力が高め</mark>で連射が速い。射程が非常に短く拡散が大きい。</p>
+            </div>
+            <div>
+                <h2>プロモデラーMG</h2>
+                <p>拡散が大きく連射がとても速いため<mark>塗りやすい</mark>。</p>
+            </div>
+            <div>
+                <h2>プロモデラーRG</h2>
+                <p>拡散が大きく連射がとても速いため<mark>塗りやすい</mark>。</p>
+            </div>
+            <div>
+                <h2>プロモデラー彩</h2>
+                <p>拡散が大きく連射がとても速いため<mark>塗りやすい</mark>。</p>
+            </div>
+            <div>
+                <h2>.52ガロン</h2>
+                <p><mark>攻撃力が非常に高い</mark>。拡散が大きい。</p>
+            </div>
+            <div>
+                <h2>.52ガロンデコ</h2>
+                <p><mark>攻撃力が非常に高い</mark>。拡散が大きい。</p>
+            </div>
+            <div>
+                <h2>.96ガロン</h2>
+                <p><mark>攻撃力が非常に高く射程も長い</mark>。連射が遅く拡散が大きい。</p>
+            </div>
+            <div>
+                <h2>.96ガロンデコ</h2>
+                <p><mark>攻撃力が非常に高く射程も長い</mark>。連射が遅く拡散が大きい。</p>
+            </div>
+            <div>
+                <h2>.96ガロン爪</h2>
+                <p><mark>攻撃力が非常に高く射程も長い</mark>。連射が遅く拡散が大きい。</p>
+            </div>
+            <div>
+                <h2>N-ZAP85</h2>
+                <p><mark>連射が速い</mark>。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>N-ZAP89</h2>
+                <p><mark>連射が速い</mark>。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>プライムシューター</h2>
+                <p><mark>攻撃力が高め</mark>で射程が長く拡散も少ない。インク効率が悪い。</p>
+            </div>
+            <div>
+                <h2>プライムシューターコラボ</h2>
+                <p><mark>攻撃力が高め</mark>で射程が長く拡散も少ない。インク効率が悪い。</p>
+            </div>
+            <div>
+                <h2>プライムシューターFRZN</h2>
+                <p><mark>攻撃力が高め</mark>で射程が長く拡散も少ない。インク効率が悪い。</p>
+            </div>
+            <div>
+                <h2>ジェットスイーパー</h2>
+                <p><mark>射程がとても長い</mark>。連射が遅く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ジェットスイーパーカスタム</h2>
+                <p><mark>射程がとても長い</mark>。連射が遅く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ジェットスイーパーCOBR</h2>
+                <p><mark>射程がとても長い</mark>。連射が遅く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>スペースシューター</h2>
+                <p><mark>射程が長く</mark>連射が速い。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>スペースシューターコラボ</h2>
+                <p><mark>射程が長く</mark>連射が速い。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>L3リールガン</h2>
+                <p>3発ずつ弾を発射する。<mark>射程がやや長く</mark>塗りやすい。</p>
+            </div>
+            <div>
+                <h2>L3リールガンD</h2>
+                <p>3発ずつ弾を発射する。<mark>射程がやや長く</mark>塗りやすい。</p>
+            </div>
+            <div>
+                <h2>L3リールガン箔</h2>
+                <p>3発ずつ弾を発射する。<mark>射程がやや長く</mark>塗りやすい。</p>
+            </div>
+            <div>
+                <h2>H3リールガン</h2>
+                <p>3発ずつ弾を発射する。<mark>射程が長く攻撃力が高め</mark>。連射が遅い。</p>
+            </div>
+            <div>
+                <h2>H3リールガンD</h2>
+                <p>3発ずつ弾を発射する。<mark>射程が長く攻撃力が高め</mark>。連射が遅い。</p>
+            </div>
+            <div>
+                <h2>H3リールガンSNAK</h2>
+                <p>3発ずつ弾を発射する。<mark>射程が長く攻撃力が高め</mark>。連射が遅い。</p>
+            </div>
+            <div>
+                <h2>ボトルガイザー</h2>
+                <p>最初の1発は<mark>攻撃力が高く射程が長い</mark>が、それ以降の弾は<mark>連射が速く塗りやすい</mark>。</p>
+            </div>
+            <div>
+                <h2>ボトルガイザーフォイル</h2>
+                <p>最初の1発は<mark>攻撃力が高く射程が長い</mark>が、それ以降の弾は<mark>連射が速く塗りやすい</mark>。</p>
+            </div>
+            <div>
+                <h2>スプラローラー</h2>
+                <p><mark>標準的</mark>な性能。</p>
+            </div>
+            <div>
+                <h2>スプラローラーコラボ</h2>
+                <p><mark>標準的</mark>な性能。</p>
+            </div>
+            <div>
+                <h2>カーボンローラー</h2>
+                <p><mark>振りが速い</mark>。射程が短く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>カーボンローラーデコ</h2>
+                <p><mark>振りが速い</mark>。射程が短く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>カーボンローラーANGL</h2>
+                <p><mark>振りが速い</mark>。射程が短く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ダイナモローラー</h2>
+                <p><mark>攻撃力が高く</mark>射程が長い。振りも塗り進みも遅い。</p>
+            </div>
+            <div>
+                <h2>ダイナモローラーテスラ</h2>
+                <p><mark>攻撃力が高く</mark>射程が長い。振りも塗り進みも遅い。</p>
+            </div>
+            <div>
+                <h2>ダイナモローラー冥</h2>
+                <p><mark>攻撃力が高く</mark>射程が長い。振りも塗り進みも遅い。</p>
+            </div>
+            <div>
+                <h2>ヴァリアブルローラー</h2>
+                <p>横振りは<mark>速く</mark>、縦振りはインクを<mark>遠くまで飛ばせる</mark>。</p>
+            </div>
+            <div>
+                <h2>ヴァリアブルローラーフォイル</h2>
+                <p>横振りは<mark>速く</mark>、縦振りはインクを<mark>遠くまで飛ばせる</mark>。</p>
+            </div>
+            <div>
+                <h2>ワイドローラー</h2>
+                <p><mark>軽く幅が広い</mark>ため塗りやすい。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ワイドローラーコラボ</h2>
+                <p><mark>軽く幅が広い</mark>ため塗りやすい。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ワイドローラー惑</h2>
+                <p><mark>軽く幅が広い</mark>ため塗りやすい。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>スプラチャージャー</h2>
+                <p><mark>標準的</mark>な性能。<mark>チャージキープ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>スプラチャージャーコラボ</h2>
+                <p><mark>標準的</mark>な性能。<mark>チャージキープ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>スプラチャージャーFRST</h2>
+                <p><mark>標準的</mark>な性能。<mark>チャージキープ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>スプラスコープ</h2>
+                <p><mark>スコープで狙う</mark>事ができる。<mark>標準的</mark>な性能。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>スプラスコープコラボ</h2>
+                <p><mark>スコープで狙う</mark>事ができる。<mark>標準的</mark>な性能。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>スプラスコープFRST</h2>
+                <p><mark>スコープで狙う</mark>事ができる。<mark>標準的</mark>な性能。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>スクイックリンα</h2>
+                <p><mark>チャージ時間が短い</mark>。射程が短い。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>スクイックリンβ</h2>
+                <p><mark>チャージ時間が短い</mark>。射程が短い。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>リッター4K</h2>
+                <p><mark>非常に射程が長い</mark>。<mark>チャージキープ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>リッター4Kカスタム</h2>
+                <p><mark>非常に射程が長い</mark>。<mark>チャージキープ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>4Kスコープ</h2>
+                <p><mark>非常に射程が長い</mark>。<mark>スコープで狙う</mark>事ができる。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>4Kスコープカスタム</h2>
+                <p><mark>非常に射程が長い</mark>。<mark>スコープで狙う</mark>事ができる。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>14式竹筒銃・甲</h2>
+                <p><mark>高速でチャージできて連射が速い</mark>。1発では敵を倒せない。射程がとても短い。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>14式竹筒銃・乙</h2>
+                <p><mark>高速でチャージできて連射が速い</mark>。1発では敵を倒せない。射程がとても短い。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>ソイチューバー</h2>
+                <p><mark>半分のチャージ</mark>で敵を倒せる。<mark>フルチャージせずにチャージキープ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>ソイチューバーカスタム</h2>
+                <p><mark>半分のチャージ</mark>で敵を倒せる。<mark>フルチャージせずにチャージキープ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>R-PEN/5H</h2>
+                <p>フルチャージすると<mark>5発撃てる</mark>。1発では敵を倒せない。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>R-PEN/5B</h2>
+                <p>フルチャージすると<mark>5発撃てる</mark>。1発では敵を倒せない。チャージキープができない。</p>
+            </div>
+            <div>
+                <h2>バケットスロッシャー</h2>
+                <p><mark>標準的</mark>な性能。</p>
+            </div>
+            <div>
+                <h2>バケットスロッシャーデコ</h2>
+                <p><mark>標準的</mark>な性能。</p>
+            </div>
+            <div>
+                <h2>ヒッセン</h2>
+                <p><mark>軽くて連射が速い</mark>。一度に<mark>3方向</mark>へインクを飛ばす。射程が短く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ヒッセン・ヒュー</h2>
+                <p><mark>軽くて連射が速い</mark>。一度に<mark>3方向</mark>へインクを飛ばす。射程が短く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ヒッセンASH</h2>
+                <p><mark>軽くて連射が速い</mark>。一度に<mark>3方向</mark>へインクを飛ばす。射程が短く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>スクリュースロッシャー</h2>
+                <p>直撃すると<mark>攻撃力が高い</mark>が、<mark>周りにもインクが飛び散るスクリュー弾</mark>を飛ばす。</p>
+            </div>
+            <div>
+                <h2>スクリュースロッシャーネオ</h2>
+                <p>直撃すると<mark>攻撃力が高い</mark>が、<mark>周りにもインクが飛び散るスクリュー弾</mark>を飛ばす。</p>
+            </div>
+            <div>
+                <h2>オーバーフロッシャー</h2>
+                <p><mark>4発ずつ</mark>、<mark>バウンドする泡</mark>を飛ばす。</p>
+            </div>
+            <div>
+                <h2>オーバーフロッシャーデコ</h2>
+                <p><mark>4発ずつ</mark>、<mark>バウンドする泡</mark>を飛ばす。</p>
+            </div>
+            <div>
+                <h2>エクスプロッシャー</h2>
+                <p>放物線を描いて飛び、<mark>着弾すると爆発する弾</mark>を飛ばす。</p>
+            </div>
+            <div>
+                <h2>エクスプロッシャーカスタム</h2>
+                <p>放物線を描いて飛び、<mark>着弾すると爆発する弾</mark>を飛ばす。</p>
+            </div>
+            <div>
+                <h2>モップリン</h2>
+                <p><mark>時間差で2回</mark>インクを飛ばす。</p>
+            </div>
+            <div>
+                <h2>モップリンD</h2>
+                <p><mark>時間差で2回</mark>インクを飛ばす。</p>
+            </div>
+            <div>
+                <h2>モップリン角</h2>
+                <p><mark>時間差で2回</mark>インクを飛ばす。</p>
+            </div>
+            <div>
+                <h2>バレルスピナー</h2>
+                <p><mark>標準的</mark>な性能。</p>
+            </div>
+            <div>
+                <h2>バレルスピナーデコ</h2>
+                <p><mark>標準的</mark>な性能。</p>
+            </div>
+            <div>
+                <h2>スプラスピナー</h2>
+                <p><mark>チャージ時間が短い</mark>。連射時間が短い。</p>
+            </div>
+            <div>
+                <h2>スプラスピナーコラボ</h2>
+                <p><mark>チャージ時間が短い</mark>。連射時間が短い。</p>
+            </div>
+            <div>
+                <h2>スプラスピナーPYTN</h2>
+                <p><mark>チャージ時間が短い</mark>。連射時間が短い。</p>
+            </div>
+            <div>
+                <h2>ハイドラント</h2>
+                <p><mark>射程がとても長い</mark>。チャージ時間が非常に長い。</p>
+            </div>
+            <div>
+                <h2>ハイドラントカスタム</h2>
+                <p><mark>射程がとても長い</mark>。チャージ時間が非常に長い。</p>
+            </div>
+            <div>
+                <h2>ハイドラント圧</h2>
+                <p><mark>射程がとても長い</mark>。チャージ時間が非常に長い。</p>
+            </div>
+            <div>
+                <h2>ノーチラス47</h2>
+                <p><mark>チャージキープ</mark>ができる。発射中に<mark>再チャージ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>ノーチラス79</h2>
+                <p><mark>チャージキープ</mark>ができる。発射中に<mark>再チャージ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>クーゲルシュライバー</h2>
+                <p>撃ち始めは<mark>連射が速い</mark>が、撃ち続けると<mark>射程が長く拡散が小さく</mark>なる。発射中に<mark>再チャージ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>クーゲルシュライバー・ヒュー</h2>
+                <p>撃ち始めは<mark>連射が速い</mark>が、撃ち続けると<mark>射程が長く拡散が小さく</mark>なる。発射中に<mark>再チャージ</mark>ができる。</p>
+            </div>
+            <div>
+                <h2>イグザミナー</h2>
+                <p>フルチャージすると<mark>連射が速くなる</mark>。<mark>連射時間が長い</mark>。チャージ時間が長い。</p>
+            </div>
+            <div>
+                <h2>イグザミナー・ヒュー</h2>
+                <p>フルチャージすると<mark>連射が速くなる</mark>。<mark>連射時間が長い</mark>。チャージ時間が長い。</p>
+            </div>
+            <div>
+                <h2>スプラマニューバー</h2>
+                <p><mark>標準的</mark>な性能。スライドを2回連続で行える。</p>
+            </div>
+            <div>
+                <h2>スプラマニューバーコラボ</h2>
+                <p><mark>標準的</mark>な性能。スライドを2回連続で行える。</p>
+            </div>
+            <div>
+                <h2>スプラマニューバー耀</h2>
+                <p><mark>標準的</mark>な性能。スライドを2回連続で行える。</p>
+            </div>
+            <div>
+                <h2>スパッタリー</h2>
+                <p><mark>連射が速い</mark>。スライドを2回連続で行える。射程が短い。</p>
+            </div>
+            <div>
+                <h2>スパッタリー・ヒュー</h2>
+                <p><mark>連射が速い</mark>。スライドを2回連続で行える。射程が短い。</p>
+            </div>
+            <div>
+                <h2>スパッタリーOWL</h2>
+                <p><mark>連射が速い</mark>。スライドを2回連続で行える。射程が短い。</p>
+            </div>
+            <div>
+                <h2>ケルビン525</h2>
+                <p>スライド後は<mark>攻撃力が上がる</mark>。スライドを2回連続で行える。</p>
+            </div>
+            <div>
+                <h2>ケルビン525デコ</h2>
+                <p>スライド後は<mark>攻撃力が上がる</mark>。スライドを2回連続で行える。</p>
+            </div>
+            <div>
+                <h2>デュアルスイーパー</h2>
+                <p><mark>射程が長い</mark>。スライド後は<mark>射程が少し伸びる</mark>。スライドを2回連続で行える。</p>
+            </div>
+            <div>
+                <h2>デュアルスイーパーカスタム</h2>
+                <p><mark>射程が長い</mark>。スライド後は<mark>射程が少し伸びる</mark>。スライドを2回連続で行える。</p>
+            </div>
+            <div>
+                <h2>デュアルスイーパー蹄</h2>
+                <p><mark>射程が長い</mark>。スライド後は<mark>射程が少し伸びる</mark>。スライドを2回連続で行える。</p>
+            </div>
+            <div>
+                <h2>クアッドホッパーブラック</h2>
+                <p>スライドを<mark>4回連続</mark>で行える。<mark>スライド中にも弾を発射</mark>できる。攻撃力は低い。</p>
+            </div>
+            <div>
+                <h2>クアッドホッパーホワイト</h2>
+                <p>スライドを<mark>4回連続</mark>で行える。<mark>スライド中にも弾を発射</mark>できる。攻撃力は低い。</p>
+            </div>
+            <div>
+                <h2>ガエンFF</h2>
+                <p>スライド前は<mark>射程が長く</mark>、スライド後は<mark>連射が速い</mark>。スライドを連続で行えない。</p>
+            </div>
+            <div>
+                <h2>ガエンFFカスタム</h2>
+                <p>スライド前は<mark>射程が長く</mark>、スライド後は<mark>連射が速い</mark>。スライドを連続で行えない。</p>
+            </div>
+            <div>
+                <h2>パラシェルター</h2>
+                <p><mark>標準的な</mark>性能。傘はパージできる。</p>
+            </div>
+            <div>
+                <h2>パラシェルターソレーラ</h2>
+                <p><mark>標準的な</mark>性能。傘はパージできる。</p>
+            </div>
+            <div>
+                <h2>キャンピングシェルター</h2>
+                <p>傘の<mark>横幅が広く耐久性が高い</mark>。傘はパージできる。ショットは<mark>射程が長く攻撃力が高い</mark>。連射はとても遅い。</p>
+            </div>
+            <div>
+                <h2>キャンピングシェルターソレーラ</h2>
+                <p>傘の<mark>横幅が広く耐久性が高い</mark>。傘はパージできる。ショットは<mark>射程が長く攻撃力が高い</mark>。連射はとても遅い。</p>
+            </div>
+            <div>
+                <h2>キャンピングシェルターCREM</h2>
+                <p>傘の<mark>横幅が広く耐久性が高い</mark>。傘はパージできる。ショットは<mark>射程が長く攻撃力が高い</mark>。連射はとても遅い。</p>
+            </div>
+            <div>
+                <h2>スパイガジェット</h2>
+                <p>傘を<mark>開いたまま連射ができる</mark>。傘はパージできない。攻撃力は低く傘の耐久性も低い。</p>
+            </div>
+            <div>
+                <h2>スパイガジェットソレーラ</h2>
+                <p>傘を<mark>開いたまま連射ができる</mark>。傘はパージできない。攻撃力は低く傘の耐久性も低い。</p>
+            </div>
+            <div>
+                <h2>スパイガジェット繚</h2>
+                <p>傘を<mark>開いたまま連射ができる</mark>。傘はパージできない。攻撃力は低く傘の耐久性も低い。</p>
+            </div>
+            <div>
+                <h2>24式張替傘・甲</h2>
+                <p>パージするまでの<mark>時間が短い</mark>。ショットの<mark>攻撃力が高い</mark>。傘はパージすると<mark>速く前進する</mark>。傘の耐久性が低い。</p>
+            </div>
+            <div>
+                <h2>24式張替傘・乙</h2>
+                <p>パージするまでの<mark>時間が短い</mark>。ショットの<mark>攻撃力が高い</mark>。傘はパージすると<mark>速く前進する</mark>。傘の耐久性が低い。</p>
+            </div>
+            <div>
+                <h2>ホットブラスター</h2>
+                <p><mark>攻撃力が高め</mark>。連射が遅い。</p>
+            </div>
+            <div>
+                <h2>ホットブラスターカスタム</h2>
+                <p><mark>攻撃力が高め</mark>。連射が遅い。</p>
+            </div>
+            <div>
+                <h2>ホットブラスター艶</h2>
+                <p><mark>攻撃力が高め</mark>。連射が遅い。</p>
+            </div>
+            <div>
+                <h2>ロングブラスター</h2>
+                <p><mark>射程が長く攻撃力が高め</mark>。連射が遅い。</p>
+            </div>
+            <div>
+                <h2>ロングブラスターカスタム</h2>
+                <p><mark>射程が長く攻撃力が高め</mark>。連射が遅い。</p>
+            </div>
+            <div>
+                <h2>ノヴァブラスター</h2>
+                <p><mark>連射が速く短時間で爆発</mark>する。<mark>爆発が大きい</mark>。射程は短い。</p>
+            </div>
+            <div>
+                <h2>ノヴァブラスターネオ</h2>
+                <p><mark>連射が速く短時間で爆発</mark>する。<mark>爆発が大きい</mark>。射程は短い。</p>
+            </div>
+            <div>
+                <h2>クラッシュブラスター</h2>
+                <p><mark>連射がとても速い</mark>。射程が短く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>クラッシュブラスターネオ</h2>
+                <p><mark>連射がとても速い</mark>。射程が短く攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ラピッドブラスター</h2>
+                <p><mark>連射が速めで射程が長い</mark>。攻撃力は低め。</p>
+            </div>
+            <div>
+                <h2>ラピッドブラスターデコ</h2>
+                <p><mark>連射が速めで射程が長い</mark>。攻撃力は低め。</p>
+            </div>
+            <div>
+                <h2>Rブラスターエリート</h2>
+                <p><mark>射程がとても長い</mark>。爆発が小さく攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>Rブラスターエリートデコ</h2>
+                <p><mark>射程がとても長い</mark>。爆発が小さく攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>RブラスターエリートWNTR</h2>
+                <p><mark>射程がとても長い</mark>。爆発が小さく攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>S-BLAST92</h2>
+                <p>地上では<mark>長射程で小さく爆発する</mark>弾、ジャンプ中は<mark>短射程で大きく爆発する</mark>弾を発射する。</p>
+            </div>
+            <div>
+                <h2>S-BLAST91</h2>
+                <p>地上では<mark>長射程で小さく爆発する</mark>弾、ジャンプ中は<mark>短射程で大きく爆発する</mark>弾を発射する。</p>
+            </div>
+            <div>
+                <h2>パブロ</h2>
+                <p>振りも塗り進みも<mark>とても速い</mark>。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>パブロ・ヒュー</h2>
+                <p>振りも塗り進みも<mark>とても速い</mark>。攻撃力が低い。</p>
+            </div>
+            <div>
+                <h2>ホクサイ</h2>
+                <p><mark>攻撃力が高い</mark>。振りが少し遅い。</p>
+            </div>
+            <div>
+                <h2>ホクサイ・ヒュー</h2>
+                <p><mark>攻撃力が高い</mark>。振りが少し遅い。</p>
+            </div>
+            <div>
+                <h2>ホクサイ彗</h2>
+                <p><mark>攻撃力が高い</mark>。振りが少し遅い。</p>
+            </div>
+            <div>
+                <h2>フィンセント</h2>
+                <p><mark>射程が長く攻撃力が高い</mark>。振り始めが遅い。</p>
+            </div>
+            <div>
+                <h2>フィンセント・ヒュー</h2>
+                <p><mark>射程が長く攻撃力が高い</mark>。振り始めが遅い。</p>
+            </div>
+            <div>
+                <h2>フィンセントBRNZ</h2>
+                <p><mark>射程が長く攻撃力が高い</mark>。振り始めが遅い。</p>
+            </div>
+            <div>
+                <h2>トライストリンガー</h2>
+                <p>3本のインクの矢を放つ。チャージしてから放つと矢が<mark>着弾後に爆発</mark>する。</p>
+            </div>
+            <div>
+                <h2>トライストリンガーコラボ</h2>
+                <p>3本のインクの矢を放つ。チャージしてから放つと矢が<mark>着弾後に爆発</mark>する。</p>
+            </div>
+            <div>
+                <h2>トライストリンガー燈</h2>
+                <p>3本のインクの矢を放つ。チャージしてから放つと矢が<mark>着弾後に爆発</mark>する。</p>
+            </div>
+            <div>
+                <h2>LACT-450</h2>
+                <p>3本のインクの矢を放つ。連射が速く<mark>塗りやすい</mark>。<mark>チャージキープ</mark>できる。インクの矢は着弾後に爆発しない。射程が短い。</p>
+            </div>
+            <div>
+                <h2>LACT-450デコ</h2>
+                <p>3本のインクの矢を放つ。連射が速く<mark>塗りやすい</mark>。<mark>チャージキープ</mark>できる。インクの矢は着弾後に爆発しない。射程が短い。</p>
+            </div>
+            <div>
+                <h2>LACT-450MILK</h2>
+                <p>3本のインクの矢を放つ。連射が速く<mark>塗りやすい</mark>。<mark>チャージキープ</mark>できる。インクの矢は着弾後に爆発しない。射程が短い。</p>
+            </div>
+            <div>
+                <h2>フルイドV</h2>
+                <p><mark>5本</mark>のインクの矢を撃つ。チャージ時間により<mark>集中して1か所に撃ったり</mark>、<mark>広く散らせる</mark>事ができる。着弾後に爆発する。チャージが遅い。</p>
+            </div>
+            <div>
+                <h2>フルイドVカスタム</h2>
+                <p><mark>5本</mark>のインクの矢を撃つ。チャージ時間により<mark>集中して1か所に撃ったり</mark>、<mark>広く散らせる</mark>事ができる。着弾後に爆発する。チャージが遅い。</p>
+            </div>
+            <div>
+                <h2>ドライブワイパー</h2>
+                <p><mark>振りが速く射程がやや長い</mark>。フルチャージすると縦振りとなる。攻撃力が低め。</p>
+            </div>
+            <div>
+                <h2>ドライブワイパーデコ</h2>
+                <p><mark>振りが速く射程がやや長い</mark>。フルチャージすると縦振りとなる。攻撃力が低め。</p>
+            </div>
+            <div>
+                <h2>ドライブワイパーRUST</h2>
+                <p><mark>振りが速く射程がやや長い</mark>。フルチャージすると縦振りとなる。攻撃力が低め。</p>
+            </div>
+            <div>
+                <h2>ジムワイパー</h2>
+                <p><mark>攻撃力が高い</mark>。フルチャージすると縦振りとなる。縦振りに必要なチャージ時間が長い。</p>
+            </div>
+            <div>
+                <h2>ジムワイパー・ヒュー</h2>
+                <p><mark>攻撃力が高い</mark>。フルチャージすると縦振りとなる。縦振りに必要なチャージ時間が長い。</p>
+            </div>
+            <div>
+                <h2>ジムワイパー封</h2>
+                <p><mark>攻撃力が高い</mark>。フルチャージすると縦振りとなる。縦振りに必要なチャージ時間が長い。</p>
+            </div>
+            <div>
+                <h2>デンタルワイパーミント</h2>
+                <p><mark>射程が長く攻撃力が高い</mark>。フルチャージして振っても横振りとなる。</p>
+            </div>
+            <div>
+                <h2>デンタルワイパースミ</h2>
+                <p><mark>射程が長く攻撃力が高い</mark>。フルチャージして振っても横振りとなる。</p>
+            </div>
+            <div>
+                <h2>ヒーローシューター レプリカ</h2>
+                <p><mark>標準的</mark>な性能。スプラシューターと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダーシューター レプリカ</h2>
+                <p><mark>標準的</mark>な性能。スプラシューターと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダーローラー レプリカ</h2>
+                <p><mark>標準的</mark>な性能。スプラローラーと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダーチャージャー レプリカ</h2>
+                <p><mark>標準的</mark>な性能。<mark>チャージキープ</mark>ができる。スプラチャージャーと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダースロッシャー レプリカ</h2>
+                <p><mark>標準的</mark>な性能。バケットスロッシャーと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダースピナー レプリカ</h2>
+                <p><mark>標準的</mark>な性能。バレルスピナーと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダーマニューバー レプリカ</h2>
+                <p><mark>標準的</mark>な性能。スライドを2回連続で行える。スプラマニューバーと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダーシェルター レプリカ</h2>
+                <p><mark>標準的</mark>な性能。傘はパージできる。パラシェルターと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダーブラスター レプリカ</h2>
+                <p><mark>連射が速く短時間で爆発</mark>する。<mark>爆発が大きい</mark>。射程は短い。ノヴァブラスターと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダーブラシ レプリカ</h2>
+                <p><mark>攻撃力が高い</mark>。振りが少し遅い。ホクサイと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダーストリンガー レプリカ</h2>
+                <p>3本のインクの矢を放つ。チャージしてから放つと矢が<mark>着弾後に爆発</mark>する。トライストリンガーと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オーダーワイパー レプリカ</h2>
+                <p><mark>攻撃力が高い</mark>。フルチャージすると縦振りとなる。縦振りに必要なチャージ時間が長い。ジムワイパーと全く同じ性能。</p>
+            </div>
+            <div>
+                <h2>オクタシューター レプリカ</h2>
+                <p><mark>標準的</mark>な性能。スプラシューターコラボと全く同じ性能。</p>
+            </div>
+
+            <div>
+                <h2>スプラッシュボム</h2>
+                <p><mark>接地してしばらくすると爆発</mark>する。</p>
+            </div>
+            <div>
+                <h2>キューバンボム</h2>
+                <p><mark>床や壁に貼りつき</mark>、しばらくすると爆発する。</p>
+            </div>
+            <div>
+                <h2>クイックボム</h2>
+                <p>着弾すると<mark>すぐに爆発</mark>する。</p>
+            </div>
+            <div>
+                <h2>スプリンクラー</h2>
+                <p>地面や壁に貼りつき、<mark>インクをまき散らす</mark>。</p>
+            </div>
+            <div>
+                <h2>スプラッシュシールド</h2>
+                <p>敵の<mark>侵入や攻撃を防ぐ</mark>。</p>
+            </div>
+            <div>
+                <h2>タンサンボム</h2>
+                <p>動きに応じてパワーが貯まり、投げると<mark>貯まったパワーの分だけ爆発</mark>する。</p>
+            </div>
+            <div>
+                <h2>カーリングボム</h2>
+                <p>地面を<mark>塗り進んでから爆発</mark>する。</p>
+            </div>
+            <div>
+                <h2>ロボットボム</h2>
+                <p>着地した場所の周囲を探知し、<mark>自動で相手を追いかける</mark>。</p>
+            </div>
+            <div>
+                <h2>ジャンプビーコン</h2>
+                <p>マップ上で選ぶとそこに<mark>スーパージャンプ</mark>できる。</p>
+            </div>
+            <div>
+                <h2>ポイントセンサー</h2>
+                <p>投げつけた場所の近くにいる敵を<mark>マーキング</mark>する。</p>
+            </div>
+            <div>
+                <h2>トラップ</h2>
+                <p>足元に設置し、敵が近づくと作動して<mark>マーキング</mark>する。</p>
+            </div>
+            <div>
+                <h2>ポイズンミスト</h2>
+                <p>着弾すると発生し、入った敵の<mark>移動を遅くしてインクを減らし続ける</mark>。</p>
+            </div>
+            <div>
+                <h2>ラインマーカー</h2>
+                <p>一直線に飛び壁や地面で跳ね返り、触れた相手を<mark>マーキング</mark>する。</p>
+            </div>
+            <div>
+                <h2>トーピード</h2>
+                <p>敵の近くに投げると向かって飛んでいき、着弾すると<mark>爆発するインク</mark>をまき散らす。</p>
+            </div>
+
+            <div>
+                <h2>ウルトラショット</h2>
+                <p>強力なショットを<mark>3発</mark>撃つ。</p>
+            </div>
+            <div>
+                <h2>グレートバリア</h2>
+                <p>外側からの敵の<mark>インク攻撃を防ぐ</mark>球状のバリアを展開する。</p>
+            </div>
+            <div>
+                <h2>ショクワンダー</h2>
+                <p>ステージを<mark>飛び回ることができる触腕</mark>を持った姿に変身する。</p>
+            </div>
+            <div>
+                <h2>マルチミサイル</h2>
+                <p>カーソルで狙った<mark>複数の目標</mark>にミサイルを発射する。</p>
+            </div>
+            <div>
+                <h2>アメフラシ</h2>
+                <p>少しずつ前進しながら<mark>インクを降らせる雨雲</mark>を発生させる。</p>
+            </div>
+            <div>
+                <h2>ナイスダマ</h2>
+                <p>自分や味方が<mark>ナイスを送る</mark>ことで力が貯まり、着弾すると大きな爆発を起こす。</p>
+            </div>
+            <div>
+                <h2>ホップソナー</h2>
+                <p>敵に当たると<mark>マーキングするウェーブ</mark>を生み出す。</p>
+            </div>
+            <div>
+                <h2>キューインキ</h2>
+                <p>敵が撃った<mark>インクを吸い込む</mark>ほどゲージが貯まり、最後に強力な弾を放つ。</p>
+            </div>
+            <div>
+                <h2>メガホンレーザー5.1ch</h2>
+                <p>敵をカーソルで狙い<mark>自動で追撃</mark>する6つの装置を展開する。</p>
+            </div>
+            <div>
+                <h2>ジェットパック</h2>
+                <p>インクを噴射して<mark>空を飛び</mark>、付属のランチャーで攻撃する。</p>
+            </div>
+            <div>
+                <h2>ウルトラハンコ</h2>
+                <p>前方を<mark>叩きつけながら前進</mark>したり、投げつける事ができる。</p>
+            </div>
+            <div>
+                <h2>カニタンク</h2>
+                <p><mark>連射ショットやカノン砲</mark>で攻撃する。</p>
+            </div>
+            <div>
+                <h2>サメライド</h2>
+                <p>直線のコースを作り、<mark>前方に突撃して爆発</mark>する。</p>
+            </div>
+            <div>
+                <h2>トリプルトルネード</h2>
+                <p>着弾した所に<mark>トルネードを発生</mark>させる3つの装置を投げる。</p>
+            </div>
+            <div>
+                <h2>エナジースタンド</h2>
+                <p>一時的に<mark>能力を強化するドリンク</mark>が4人分入った冷蔵庫を投げる。</p>
+            </div>
+            <div>
+                <h2>デコイチラシ</h2>
+                <p>スーパージャンプにそっくりな<mark>マーカーが表示される</mark>デコイを発射する。</p>
+            </div>
+            <div>
+                <h2>テイオウイカ</h2>
+                <p>敵の攻撃を弾き、<mark>スピンしたり前方へ突撃して攻撃</mark>できる巨大なイカへ変身する。</p>
+            </div>
+            <div>
+                <h2>ウルトラチャクチ</h2>
+                <p>空中に浮き上がり、自分自身とインクを合わせた<mark>3つのこぶし</mark>を地面に叩きつける。</p>
+            </div>
+            <div>
+                <h2>スミナガシート</h2>
+                <p>視界を悪くし、触れた敵は一定時間<mark>色が見えづらくなる</mark>シートを発生させる。</p>
+            </div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

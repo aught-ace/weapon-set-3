@@ -4,50 +4,131 @@
     background-color: #292e34;
     display: grid;
     place-items: center;
-    grid-template-columns: 3.25rem 2.75rem 2.75rem 1fr;
+    grid-template-columns: 3.25rem 2.5rem 2.5rem 1fr;
+    grid-template-rows: 3rem;
     block-size: 3rem;
     border-radius: 0.5rem;
     overflow: hidden;
-    margin: 0.25rem 0;
+    margin-block: 0.5rem;
 }
 
-button {
-    color: #CCC;
-    background-color: transparent;
-    border-style: none;
-    cursor: pointer;
-    text-align: left;
-}
-
-.main {
+.weapon-set .main {
     padding-inline-start: 0.25rem;
-    padding-inline-end: 0rem;
+    line-height: 1rem;
 }
-.sub, .special {
-    inline-size: 2.5rem;
-    block-size: 2.5rem;
+.weapon-set .sub,
+.weapon-set .special {
+    inline-size: 2rem;
+    block-size: 2rem;
+    padding-inline-start: 0.5rem;
     border-radius: 0.5rem;
+    line-height: 1rem;
     inline-size: fit-content;
 }
-.name {
+.weapon-set .name {
     inline-size: 100%;
+    block-size: 100%;
     padding-inline-start: 0.25rem;
 }
 
-.main img {
+.weapon-set .main img {
     inline-size: 3rem;
-    block-size: auto;
-    vertical-align: middle;
+    block-size: 3rem;
 }
-.sub img, .special img {
-    inline-size: 2.5rem;
-    block-size: 2.5rem;
-    vertical-align: middle;
+.weapon-set .sub img,
+.weapon-set .special img {
+    inline-size: 2rem;
+    block-size: 2rem;
     border-radius: 0.5rem;
 }
 
+/* ブキを押した時の表示 */
+#description {
+    background-color: #292e34;
+    filter: drop-shadow(0 0 0.4rem #000);
+    opacity: 0.8;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 6.5em 6.5em;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: fixed;
+    cursor: text;
+    --desc-size: min(calc(var(--size) - 4rem), calc(100dvmin - 4rem));
+    inline-size: var(--desc-size);
+    block-size: var(--desc-size);
+    left: calc(50dvi - var(--desc-size) / 2);
+    top: calc(50dvb - var(--desc-size) / 2);
+    font-size: calc(var(--desc-size) / 24.1);
+}
+#description .main {
+    color: #FFF;
+    padding-block-start: 0.5em;
+    padding-inline: 0.5em;
+}
+#description .sub {
+    background-color: #161616;
+    color: #FFF;
+    margin-inline: 0.5em;
+    margin-block-end: 0.5em;
+    border-radius: 0.5em;
+    line-height: 1em;
+    overflow: hidden;
+}
+#description .special {
+    background-color: #161616;
+    color: #FFF;
+    margin-inline: 0.5em;
+    margin-block-end: 0.5em;
+    border-radius: 0.5em;
+    line-height: 1em;
+    overflow: hidden;
+}
+#description p {
+    padding-inline: 0.5em;
+}
+
+#description img {
+    vertical-align: middle;
+}
+
+#description .main img {
+    inline-size: 4em;
+    block-size: 4em;
+}
+#description .sub img,
+#description .special img {
+    inline-size: 2em;
+    block-size: 2em;
+}
+
+#description h2 {
+    color: #FFF;
+    font-weight: bold;
+    vertical-align: middle;
+    inline-size: fit-content;
+    display: inline-block;
+}
+#description .main h2 {
+    inline-size: calc(var(--desc-size) - 2em - 4em);
+    block-size: 4em;
+    line-height: 4em;
+}
+#description .sub h2,
+#description .special h2 {
+    inline-size: calc(var(--desc-size) - 2em - 2em);
+    block-size: 2em;
+    line-height: 2em;
+}
+
+mark {
+    background-color: transparent;
+    color: #F93;
+}
+
+/* 見えないようにする */
 .none {
-    display: none;
+    display: none !important;
 }
 
 /* フィルター */
@@ -55,29 +136,29 @@ button {
     background-color: #292e34;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(1, calc(var(--size) / 12));
+    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 12));
     line-height: 0;
 }
 .sub-filter {
     background-color: #161616;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, calc(var(--size) / 12));
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 15));
     line-height: 0;
 }
 .special-filter {
     background-color: #161616;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, calc(var(--size) / 12));
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 20));
     line-height: 0;
 }
 
-.search {
+#word-search {
     background-color: #292e34;
     display: grid;
-    grid-template-columns: 0.08fr 1fr;
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: 0.083fr 1fr;
+    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 12));
 }
 #clear {
     font-weight: bold;
@@ -85,20 +166,21 @@ button {
 }
 #search {
     inline-size: 100%;
+    block-size: 100%;
     background-color: #292e34;
-    color: #CCC;
+    color: #BBB;
     padding: 0 0.125rem;
     border-style: none;
-    vertical-align: top;
 }
 .thin {
-    opacity: 0.5;
-    font-size: 0.5em;
+    opacity: 0.6;
+    font-size: 0.6rem;
 }
 
 #input {
     background-color: #161616;
     border-radius: 0.5rem;
+    margin-block: 0.5rem;
     overflow: hidden;
 }
 
@@ -117,9 +199,8 @@ label {
     text-align: center;
     display: flex;
     align-items: center;
-    color: #CCC;
-    opacity: 0.5;
-    font-size: 0.5em;
+    color: #BBB;
+    opacity: 0.6;
     font-weight: bold;
     inline-size: 100%;
     block-size: 100%;
@@ -127,29 +208,40 @@ label {
 }
 
 label:has(div) {
-    font-size: 0.5rem;
     padding: 20%;
 }
 label:has(:checked) {
     opacity: 1;
-    font-size: 1rem;
 }
 
 label:has(input[name="type"]) {
     display: grid;
     place-items: center;
+    font-size: 0.5rem;
 }
 label:has(input[name="sub"]) {
     display: grid;
     place-items: center;
+    font-size: 0.4rem;
 }
 label:has(input[name="special"]) {
     display: grid;
     place-items: center;
+    font-size: 0.3rem;
+}
+
+label:has(input[name="type"]:checked) {
+    font-size: 1rem;
+}
+label:has(input[name="sub"]:checked) {
+    font-size: 0.8rem;
+}
+label:has(input[name="special"]:checked) {
+    font-size: 0.6rem;
 }
 
 label img {
-    inline-size: 50%;
+    inline-size: 60%;
     block-size: auto;
     vertical-align: middle;
 }
@@ -162,11 +254,17 @@ input[type="radio"] {
     display: none;
 }
 
+#title {
+    display: grid;
+    grid-template-columns: 14rem 1fr;
+    grid-template-rows: 3rem;
+}
 h1 {
-    padding-block: 0.125rem;
+    inline-size: 14rem;
     font-size: 2rem;
     font-weight: bold;
-    line-height: 1em;
+    line-height: 1.5rem;
+    vertical-align: middle;
 }
 .yellow {
     color: #FF0;
@@ -175,22 +273,56 @@ h1 {
     line-height: 1em;
     vertical-align: middle;
 }
+header p {
+    color: #999;
+    font-size: 0.6rem;
+    line-height: 1em;
+    text-align: right;
+    padding-block-start: 1.25rem;
+}
 
-header, main {
+header h2,
+main h2 {
+    color: #999;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1rem;
+}
+
+header,
+main {
     inline-size: var(--size);
+    padding-inline: 0.5rem;
     margin-inline: auto;
+}
+
+.desc {
+    cursor: pointer;
+}
+.desc header,
+.desc main {
+    filter: blur(0.4rem);
+    opacity: 0.4;
+}
+
+button {
+    color: #CCC;
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+    text-align: left;
 }
 
 body {
     background-color: #000;
     color: #CCC;
-    padding-block: 0.0625rem;
 }
 
 html {
+    scrollbar-color: #666 transparent;
     text-size-adjust: 100%;
-    font-size: calc(var(--size) / 25);
-    --size: min(calc(100svi - 0.5rem), 8in);
+    font-size: calc(var(--size) / 25.1);
+    --size: min(calc(100svi), 8in);
 }
 
 * {
@@ -200,7 +332,7 @@ html {
     font-size: 1em;
     font-weight: normal;
     font-family: sans-serif;
-    word-spacing: 0.25rem;
+    word-spacing: 0.125rem;
     word-break: break-all;
     letter-spacing: 0;
     box-sizing: border-box;

@@ -4,13 +4,16 @@
 const typeRadio = document.querySelectorAll('.type-filter input[type="radio"]');
 const subRadio = document.querySelectorAll('.sub-filter input[type="radio"]');
 const specialRadio = document.querySelectorAll('.special-filter input[type="radio"]');
-const weaponSet = document.querySelectorAll('.weapon-set');
-const mainButton = document.querySelectorAll('.main');
-const subButton = document.querySelectorAll('.sub');
-const specialButton = document.querySelectorAll('.special');
-const nameButton = document.querySelectorAll('.name');
+const weaponSetDiv = document.querySelectorAll('.weapon-set');
+const mainButton = document.querySelectorAll('.weapon-set .main');
+const subButton = document.querySelectorAll('.weapon-set .sub');
+const specialButton = document.querySelectorAll('.weapon-set .special');
+const nameButton = document.querySelectorAll('.weapon-set .name');
 const searchText = document.querySelector('#search');
 const clearButton = document.querySelector('#clear');
+const descriptionDiv = document.querySelector('#description');
+const descriptionStoreDiv = document.querySelector('#description-store');
+const glassDiv = document.querySelector('#glass');
 
 // 要素にクラスを追加、削除
 const addClass = (e, c) => {
@@ -31,7 +34,7 @@ const update = () => {
     if(s !== '') clearButton.className = 'thin'; else clearButton.className = '';
     
     // 検索
-    weaponSet.forEach((w) => {
+    weaponSetDiv.forEach((w) => {
         removeClass(w, 'none');
         let v = true;
 
@@ -89,19 +92,22 @@ clearButton.addEventListener('click', (e) => {
     update();
 });
 
-// メインのボタンに設定
+// ブキ一覧のメインのボタンに設定
 mainButton.forEach((b) => {
     b.addEventListener('click', (e) => {
+        if(descView) return;
         const m = b.dataset.type;
         typeRadio.forEach((r) => {
             if(r.id === m) r.click();
         });
+        window.scroll(0, 0);
     });
 });
 
-// サブのボタンに設定
+// ブキ一覧のサブのボタンに設定
 subButton.forEach((b) => {
     b.addEventListener('click', (e) => {
+        if(descView) return;
         const i = b.querySelector('img');
         const n = i.src.match(/\/([\w-]+?)\.PNG/);
         if(n == null) return;
@@ -109,12 +115,14 @@ subButton.forEach((b) => {
         subRadio.forEach((r) => {
             if(r.id === m) r.click();
         });
+        window.scroll(0, 0);
     });
 });
 
-// スペシャルのボタンに設定
+// ブキ一覧のスペシャルのボタンに設定
 specialButton.forEach((b) => {
     b.addEventListener('click', (e) => {
+        if(descView) return;
         const i = b.querySelector('img');
         const n = i.src.match(/\/([\w-]+?)\.PNG/);
         if(n == null) return;
@@ -122,18 +130,94 @@ specialButton.forEach((b) => {
         specialRadio.forEach((r) => {
             if(r.id === m) r.click();
         });
+        window.scroll(0, 0);
     });
 });
 
-// 名前のボタンに設定
+let descView = false; // 説明を表示しているかのフラグ
+
+// ブキセット説明用のオブジェクト取得
+const descStoreDiv = descriptionStoreDiv.querySelectorAll('div');
+const weapon = {};
+descStoreDiv.forEach((d) => {
+    const h2 = d.querySelector('h2');
+    const p = d.querySelector('p');
+    weapon[h2.textContent] = p.innerHTML;
+});
+
+// スクロール禁止用コールバック
+function noscroll(e) {
+    e.preventDefault();
+};
+function noMiddleButton(e) {
+    if(e.button === 1)
+    e.preventDefault();
+};
+
+// 名前のボタンにイベント設定
 nameButton.forEach((b) => {
     b.addEventListener('click', (e) => {
-        const t = b.textContent;
-        specialRadio.forEach((r) => {
-            searchText.value = t;
-            update();
-        });
+        if(descView) return false;
+        const n = b.textContent;
+        const mi = b.parentElement.querySelector('.main img');
+        const sbi = b.parentElement.querySelector('.sub img');
+        const sbn = sbi.alt;
+        const spi = b.parentElement.querySelector('.special img');
+        const spn = spi.alt;
+
+        const descMainImg = descriptionDiv.querySelector('.main img');
+        const descSubImg = descriptionDiv.querySelector('.sub img');
+        const descSpecialImg = descriptionDiv.querySelector('.special img');
+        const descMainH2 = descriptionDiv.querySelector('.main h2');
+        const descSubH2 = descriptionDiv.querySelector('.sub h2');
+        const descSpecialH2 = descriptionDiv.querySelector('.special h2');
+        const descMainP = descriptionDiv.querySelector('.main p');
+        const descSubP = descriptionDiv.querySelector('.sub p');
+        const descSpecialP = descriptionDiv.querySelector('.special p');
+
+        descMainImg.src = mi.src;
+        descSubImg.src = sbi.src;
+        descSpecialImg.src = spi.src;
+        descMainH2.textContent = n;
+        descSubH2.textContent = sbn;
+        descSpecialH2.textContent = spn;
+        descMainP.innerHTML = weapon[n];
+        descSubP.innerHTML = weapon[sbn];
+        descSpecialP.innerHTML = weapon[spn];
+        
+        document.addEventListener('mousedown', noMiddleButton, {passive: false});
+        document.addEventListener('touchmove', noscroll, {passive: false});
+        document.addEventListener('wheel', noscroll, {passive: false});
+        descriptionDiv.className = '';
+        document.body.className = 'desc';
+        descView = true;
+
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
     });
+});
+
+// 説明欄外を押して戻る
+document.addEventListener('click', (e) => {
+    if(descView) {
+        descriptionDiv.className = 'none';
+        document.body.className = '';
+        document.removeEventListener('mousedown', noMiddleButton);
+        document.removeEventListener('touchmove', noscroll);
+	    document.removeEventListener('wheel', noscroll);
+        descView = false;
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    }
+});
+
+// 説明欄を押しても何も起こらない
+descriptionDiv.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
 });
 
 update();
