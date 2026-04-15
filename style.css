@@ -220,7 +220,7 @@ mark {
 
 #clear {
     display: grid;
-    grid-template-columns: 2rem 2rem 2rem 1fr;
+    grid-template-columns: 3.25rem 2.25rem 2.25rem 1fr;
     grid-template-rows: 2rem;
 }
 #clear label {
@@ -228,6 +228,7 @@ mark {
     text-align: center;
     block-size: 2rem;
     inline-size: 100%;
+    padding-inline-start: 0.25rem;
     opacity: 0.2;
     font-weight: bold;
 }
