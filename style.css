@@ -4,7 +4,7 @@
     background-color: #292e34;
     display: grid;
     place-items: center;
-    grid-template-columns: 3.25rem 2.5rem 2.5rem 1fr;
+    grid-template-columns: 3.25rem 2.25rem 2.25rem 1fr;
     grid-template-rows: 3rem;
     block-size: 3rem;
     border-radius: 0.5rem;
@@ -20,7 +20,7 @@
 .weapon-set .special {
     inline-size: 2rem;
     block-size: 2rem;
-    padding-inline-start: 0.5rem;
+    padding-inline-start: 0.25rem;
     border-radius: 0.5rem;
     line-height: 1rem;
     inline-size: fit-content;
@@ -28,7 +28,7 @@
 .weapon-set .name {
     inline-size: 100%;
     block-size: 100%;
-    padding-inline-start: 0.25rem;
+    padding-inline-start: 0.5rem;
 }
 
 .weapon-set .main img {
@@ -53,13 +53,13 @@
     border-radius: 0.5rem;
     overflow: hidden;
     position: fixed;
-    cursor: text;
+    cursor: default;
     --desc-size: min(calc(var(--size) - 4rem), calc(100dvmin - 4rem));
     inline-size: var(--desc-size);
     block-size: var(--desc-size);
     left: calc(50dvi - var(--desc-size) / 2);
     top: calc(50dvb - var(--desc-size) / 2);
-    font-size: calc(var(--desc-size) / 24.1);
+    font-size: calc(var(--desc-size) / 25.1);
 }
 #description .main {
     color: #FFF;
@@ -86,6 +86,9 @@
 }
 #description p {
     padding-inline: 0.5em;
+}
+#description .main p {
+    padding-block-start: 0.5em;
 }
 
 #description img {
@@ -135,44 +138,46 @@ mark {
 .type-filter {
     background-color: #292e34;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 12));
-    line-height: 0;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 11));
+    place-items: center;
+    line-height: 1rem;
 }
 .sub-filter {
     background-color: #161616;
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
-    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 15));
-    line-height: 0;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 14));
+    place-items: center;
+    line-height: 1rem;
 }
 .special-filter {
     background-color: #161616;
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 20));
-    line-height: 0;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 19));
+    place-items: center;
+    line-height: 1rem;
 }
 
 #word-search {
     background-color: #292e34;
-    display: grid;
-    grid-template-columns: 0.083fr 1fr;
-    grid-template-rows: repeat(1, calc((var(--size) - 1rem) / 12));
-}
-#clear {
-    font-weight: bold;
-    text-align: center;
 }
 #search {
     inline-size: 100%;
     block-size: 100%;
     background-color: #292e34;
     color: #BBB;
-    padding: 0 0.125rem;
+    padding-inline: 0.25rem;
     border-style: none;
 }
-.thin {
+
+#clear label {
+    background-color: #161616;
+    text-align: center;
+    font-weight: bold;
+    block-size: 2rem;
+    inline-size: 100%;
     opacity: 0.6;
     font-size: 0.6rem;
 }
@@ -180,7 +185,6 @@ mark {
 #input {
     background-color: #161616;
     border-radius: 0.5rem;
-    margin-block: 0.5rem;
     overflow: hidden;
 }
 
@@ -195,49 +199,17 @@ label:has(input[name="sub"]), label:has(input[name="special"]) {
 label {
     cursor: pointer;
     overflow: hidden;
-    vertical-align: middle;
-    text-align: center;
-    display: flex;
-    align-items: center;
     color: #BBB;
     opacity: 0.6;
-    font-weight: bold;
     inline-size: 100%;
     block-size: 100%;
+    display: grid;
+    place-items: center;
     user-select: none;
 }
-
-label:has(div) {
-    padding: 20%;
-}
 label:has(:checked) {
-    opacity: 1;
-}
-
-label:has(input[name="type"]) {
-    display: grid;
-    place-items: center;
-    font-size: 0.5rem;
-}
-label:has(input[name="sub"]) {
-    display: grid;
-    place-items: center;
-    font-size: 0.4rem;
-}
-label:has(input[name="special"]) {
-    display: grid;
-    place-items: center;
-    font-size: 0.3rem;
-}
-
-label:has(input[name="type"]:checked) {
-    font-size: 1rem;
-}
-label:has(input[name="sub"]:checked) {
-    font-size: 0.8rem;
-}
-label:has(input[name="special"]:checked) {
-    font-size: 0.6rem;
+    opacity: 1 !important;
+    font-size: 1rem !important;
 }
 
 label img {
@@ -322,7 +294,7 @@ html {
     scrollbar-color: #666 transparent;
     text-size-adjust: 100%;
     font-size: calc(var(--size) / 25.1);
-    --size: min(calc(100svi), 8in);
+    --size: min(calc(100svi), 6in);
 }
 
 * {

@@ -4,13 +4,13 @@
 const typeRadio = document.querySelectorAll('.type-filter input[type="radio"]');
 const subRadio = document.querySelectorAll('.sub-filter input[type="radio"]');
 const specialRadio = document.querySelectorAll('.special-filter input[type="radio"]');
+const allRadio = document.querySelector('#all');
 const weaponSetDiv = document.querySelectorAll('.weapon-set');
 const mainButton = document.querySelectorAll('.weapon-set .main');
 const subButton = document.querySelectorAll('.weapon-set .sub');
 const specialButton = document.querySelectorAll('.weapon-set .special');
 const nameButton = document.querySelectorAll('.weapon-set .name');
 const searchText = document.querySelector('#search');
-const clearButton = document.querySelector('#clear');
 const descriptionDiv = document.querySelector('#description');
 const descriptionStoreDiv = document.querySelector('#description-store');
 const glassDiv = document.querySelector('#glass');
@@ -29,23 +29,20 @@ const update = () => {
     const b = document.querySelector('.sub-filter input[type="radio"]:checked');
     const p = document.querySelector('.special-filter input[type="radio"]:checked');
     const s = searchText.value;
-
-    // サーチボタンを薄くする
-    if(s !== '') clearButton.className = 'thin'; else clearButton.className = '';
     
     // 検索
     weaponSetDiv.forEach((w) => {
         removeClass(w, 'none');
-        let v = true;
+        let v = true; // ブキセットが見えるかどうかのフラグ
 
         const m = w.querySelector('.main');
-        if(t.id !== 'all' && m.dataset.type !== t.id) v = false;
+        if(t != null && m.dataset.type !== t.id) v = false;
 
         const i = w.querySelector('.sub img');
-        if(b.id !== 'all' && !i.src.includes(b.id)) v = false;
+        if(b != null && !i.src.includes(b.id)) v = false;
 
         const j = w.querySelector('.special img');
-        if(p.id !== 'all' && !j.src.includes(p.id)) v = false;
+        if(p != null && !j.src.includes(p.id)) v = false;
 
         const n = w.querySelector('.name');
         if(s !== '' && !n.textContent.includes(s)) v = false;
@@ -58,37 +55,54 @@ const update = () => {
 typeRadio.forEach((r) => {
     r.addEventListener('change', (e) => {
         if (e.target.checked) {
+            searchText.value = '';
             update();
         }
     });
 });
-
 // サブのラジオボタンに設定
 subRadio.forEach((r) => {
     r.addEventListener('change', (e) => {
         if (e.target.checked) {
+            searchText.value = '';
             update();
         }
     });
 });
-
 // スペシャルのラジオボタンに設定
 specialRadio.forEach((r) => {
     r.addEventListener('change', (e) => {
         if (e.target.checked) {
+            searchText.value = '';
             update();
         }
     });
 });
 
-// サーチのテキストに設定
-searchText.addEventListener('input', (e) => {
-    update();
+// すべて表示のラジオボタンに設定
+allRadio.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        searchText.value = '';
+        update();
+    }
 });
 
-// サーチのテキストのクリアボタン
-clearButton.addEventListener('click', (e) => {
-    searchText.value = '';
+// サーチのテキストに設定
+searchText.addEventListener('input', (e) => {
+    const t = document.querySelector('.type-filter input[type="radio"]:checked');
+    const b = document.querySelector('.sub-filter input[type="radio"]:checked');
+    const p = document.querySelector('.special-filter input[type="radio"]:checked');
+    
+    // 検索中ならラジオボタンを全チェック外し
+    if(e.target.value !== '') {
+        if(t != null) t.checked = false;
+        if(b != null) b.checked = false;
+        if(p != null) p.checked = false;
+        allRadio.checked = false;
+    } else {
+        allRadio.checked = true;
+    }
+
     update();
 });
 
@@ -103,7 +117,6 @@ mainButton.forEach((b) => {
         window.scroll(0, 0);
     });
 });
-
 // ブキ一覧のサブのボタンに設定
 subButton.forEach((b) => {
     b.addEventListener('click', (e) => {
@@ -118,7 +131,6 @@ subButton.forEach((b) => {
         window.scroll(0, 0);
     });
 });
-
 // ブキ一覧のスペシャルのボタンに設定
 specialButton.forEach((b) => {
     b.addEventListener('click', (e) => {
@@ -136,7 +148,7 @@ specialButton.forEach((b) => {
 
 let descView = false; // 説明を表示しているかのフラグ
 
-// ブキセット説明用のオブジェクト取得
+// ブキセット説明用のオブジェクト生成
 const descStoreDiv = descriptionStoreDiv.querySelectorAll('div');
 const weapon = {};
 descStoreDiv.forEach((d) => {
@@ -147,11 +159,10 @@ descStoreDiv.forEach((d) => {
 
 // スクロール禁止用コールバック
 function noscroll(e) {
-    e.preventDefault();
+    //e.preventDefault();
 };
 function noMiddleButton(e) {
-    if(e.button === 1)
-    e.preventDefault();
+    //if(e.button === 1) e.preventDefault();
 };
 
 // 名前のボタンにイベント設定

@@ -5,7 +5,7 @@
         <meta
             name="viewport"
             content="width=device-width">
-        <meta name="description" content="スプラトゥーン3のブキセットを検索して特徴を表示します。" />
+        <meta name="description" content="スプラトゥーン3のブキセットを探して特徴を見る事ができます。" />
         <title>ブキセット3</title>
 	    <link href="images/icon.PNG" rel="icon">
 	    <link href="images/icon.PNG" rel="apple-touch-icon">
@@ -17,69 +17,66 @@
                 <h1>ブキセット<span class="yellow">3</span></h1>
                 <p>スプラトゥーン3 Ver.11 対応</p>
             </div>
-            <h2>フィルターと検索</h2>
             <div id="input">
+                <div id="clear">
+                    <label><input id="all" name="filter" type="radio" checked>すべて</label>
+                </div>
                 <div class="type-filter">
-                    <label><input id="all" name="type" type="radio" checked>M</label>
-                    <label><input id="shooter" name="type" type="radio"><img src="images/main/spla-shooter.PNG"></label>
-                    <label><input id="roller" name="type" type="radio"><img src="images/main/spla-roller.PNG"></label>
-                    <label><input id="charger" name="type" type="radio"><img src="images/main/spla-charger.PNG"></label>
-                    <label><input id="slosher" name="type" type="radio"><img src="images/main/bucket-slosher.PNG"></label>
-                    <label><input id="spinner" name="type" type="radio"><img src="images/main/barrel-spinner.PNG"></label>
-                    <label><input id="maneuver" name="type" type="radio"><img src="images/main/spla-maneuver.PNG"></label>
-                    <label><input id="shelter" name="type" type="radio"><img src="images/main/para-shelter.PNG"></label>
-                    <label><input id="blaster" name="type" type="radio"><img src="images/main/hot-blaster.PNG"></label>
-                    <label><input id="brush" name="type" type="radio"><img src="images/main/pablo.PNG"></label>
-                    <label><input id="stringer" name="type" type="radio"><img src="images/main/tri-stringer.PNG"></label>
-                    <label><input id="wiper" name="type" type="radio"><img src="images/main/dribe-wiper.PNG"></label>
+                    <label><input id="shooter" name="filter" type="radio"><img src="images/main/spla-shooter.PNG"></label>
+                    <label><input id="roller" name="filter" type="radio"><img src="images/main/spla-roller.PNG"></label>
+                    <label><input id="charger" name="filter" type="radio"><img src="images/main/spla-charger.PNG"></label>
+                    <label><input id="slosher" name="filter" type="radio"><img src="images/main/bucket-slosher.PNG"></label>
+                    <label><input id="spinner" name="filter" type="radio"><img src="images/main/barrel-spinner.PNG"></label>
+                    <label><input id="maneuver" name="filter" type="radio"><img src="images/main/spla-maneuver.PNG"></label>
+                    <label><input id="shelter" name="filter" type="radio"><img src="images/main/para-shelter.PNG"></label>
+                    <label><input id="blaster" name="filter" type="radio"><img src="images/main/hot-blaster.PNG"></label>
+                    <label><input id="brush" name="filter" type="radio"><img src="images/main/pablo.PNG"></label>
+                    <label><input id="stringer" name="filter" type="radio"><img src="images/main/tri-stringer.PNG"></label>
+                    <label><input id="wiper" name="filter" type="radio"><img src="images/main/dribe-wiper.PNG"></label>
                 </div>
                 <div class="sub-filter">
-                    <label><input id="all" name="sub" type="radio" checked>Sb</label>
-                    <label><input id="splash-bomb" name="sub" type="radio"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></label>
-                    <label><input id="kyuban-bomb" name="sub" type="radio"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></label>
-                    <label><input id="quick-bomb" name="sub" type="radio"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></label>
-                    <label><input id="sprinkler" name="sub" type="radio"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></label>
-                    <label><input id="splash-shield" name="sub" type="radio"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></label>
-                    <label><input id="tansan-bomb" name="sub" type="radio"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></label>
-                    <label><input id="curling-bomb" name="sub" type="radio"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></label>
-                    <label><input id="robot-bomb" name="sub" type="radio"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></label>
-                    <label><input id="jump-beacon" name="sub" type="radio"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></label>
-                    <label><input id="point-sensor" name="sub" type="radio"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></label>
-                    <label><input id="trap" name="sub" type="radio"><img alt="トラップ" src="images/sub/trap.PNG"></label>
-                    <label><input id="poison-mist" name="sub" type="radio"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></label>
-                    <label><input id="line-marker" name="sub" type="radio"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></label>
-                    <label><input id="torpedo" name="sub" type="radio"><img alt="トーピード" src="images/sub/torpedo.PNG"></label>
+                    <label><input id="splash-bomb" name="filter" type="radio"><img alt="スプラッシュボム" src="images/sub/splash-bomb.PNG"></label>
+                    <label><input id="kyuban-bomb" name="filter" type="radio"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></label>
+                    <label><input id="quick-bomb" name="filter" type="radio"><img alt="クイックボム" src="images/sub/quick-bomb.PNG"></label>
+                    <label><input id="sprinkler" name="filter" type="radio"><img alt="スプリンクラー" src="images/sub/sprinkler.PNG"></label>
+                    <label><input id="splash-shield" name="filter" type="radio"><img alt="スプラッシュシールド" src="images/sub/splash-shield.PNG"></label>
+                    <label><input id="tansan-bomb" name="filter" type="radio"><img alt="タンサンボム" src="images/sub/tansan-bomb.PNG"></label>
+                    <label><input id="curling-bomb" name="filter" type="radio"><img alt="カーリングボム" src="images/sub/curling-bomb.PNG"></label>
+                    <label><input id="robot-bomb" name="filter" type="radio"><img alt="ロボットボム" src="images/sub/robot-bomb.PNG"></label>
+                    <label><input id="jump-beacon" name="filter" type="radio"><img alt="ジャンプビーコン" src="images/sub/jump-beacon.PNG"></label>
+                    <label><input id="point-sensor" name="filter" type="radio"><img alt="ポイントセンサー" src="images/sub/point-sensor.PNG"></label>
+                    <label><input id="trap" name="filter" type="radio"><img alt="トラップ" src="images/sub/trap.PNG"></label>
+                    <label><input id="poison-mist" name="filter" type="radio"><img alt="ポイズンミスト" src="images/sub/poison-mist.PNG"></label>
+                    <label><input id="line-marker" name="filter" type="radio"><img alt="ラインマーカー" src="images/sub/line-marker.PNG"></label>
+                    <label><input id="torpedo" name="filter" type="radio"><img alt="トーピード" src="images/sub/torpedo.PNG"></label>
                 </div>
                 <div class="special-filter">
-                    <label><input id="all" name="special" type="radio" checked>Sp</label>
-                    <label><input id="ultra-shot" name="special" type="radio"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></label>
-                    <label><input id="great-barrier" name="special" type="radio"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></label>
-                    <label><input id="shokuwander" name="special" type="radio"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></label>
-                    <label><input id="multi-missile" name="special" type="radio"><img alt="マルチミサイル" src="images/special/multi-missile.PNG"></label>
-                    <label><input id="ame-furashi" name="special" type="radio"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></label>
-                    <label><input id="nice-dama" name="special" type="radio"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></label>
-                    <label><input id="hop-sonar" name="special" type="radio"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></label>
-                    <label><input id="kyuinki" name="special" type="radio"><img alt="キューインキ" src="images/special/kyuinki.PNG"></label>
-                    <label><input id="megaphone-laser-5-1ch" name="special" type="radio"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></label>
-                    <label><input id="jet-pack" name="special" type="radio"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></label>
-                    <label><input id="ultra-hanko" name="special" type="radio"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></label>
-                    <label><input id="kani-tank" name="special" type="radio"><img alt="カニタンク" src="images/special/kani-tank.PNG"></label>
-                    <label><input id="same-ride" name="special" type="radio"><img alt="サメライド" src="images/special/same-ride.PNG"></label>
-                    <label><input id="triple-tornado" name="special" type="radio"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></label>
-                    <label><input id="energy-stand" name="special" type="radio"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></label>
-                    <label><input id="dekoi-chirashi" name="special" type="radio"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></label>
-                    <label><input id="teiou-ika" name="special" type="radio"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></label>
-                    <label><input id="ultra-chakuchi" name="special" type="radio"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></label>
-                    <label><input id="suminaga-sheet" name="special" type="radio"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></label>
+                    <label><input id="ultra-shot" name="filter" type="radio"><img alt="ウルトラショット" src="images/special/ultra-shot.PNG"></label>
+                    <label><input id="great-barrier" name="filter" type="radio"><img alt="グレートバリア" src="images/special/great-barrier.PNG"></label>
+                    <label><input id="shokuwander" name="filter" type="radio"><img alt="ショクワンダー" src="images/special/shokuwander.PNG"></label>
+                    <label><input id="multi-missile" name="filter" type="radio"><img alt="マルチミサイル" src="images/special/multi-missile.PNG"></label>
+                    <label><input id="ame-furashi" name="filter" type="radio"><img alt="アメフラシ" src="images/special/ame-furashi.PNG"></label>
+                    <label><input id="nice-dama" name="filter" type="radio"><img alt="ナイスダマ" src="images/special/nice-dama.PNG"></label>
+                    <label><input id="hop-sonar" name="filter" type="radio"><img alt="ホップソナー" src="images/special/hop-sonar.PNG"></label>
+                    <label><input id="kyuinki" name="filter" type="radio"><img alt="キューインキ" src="images/special/kyuinki.PNG"></label>
+                    <label><input id="megaphone-laser-5-1ch" name="filter" type="radio"><img alt="メガホンレーザー5.1ch" src="images/special/megaphone-laser-5-1ch.PNG"></label>
+                    <label><input id="jet-pack" name="filter" type="radio"><img alt="ジェットパック" src="images/special/jet-pack.PNG"></label>
+                    <label><input id="ultra-hanko" name="filter" type="radio"><img alt="ウルトラハンコ" src="images/special/ultra-hanko.PNG"></label>
+                    <label><input id="kani-tank" name="filter" type="radio"><img alt="カニタンク" src="images/special/kani-tank.PNG"></label>
+                    <label><input id="same-ride" name="filter" type="radio"><img alt="サメライド" src="images/special/same-ride.PNG"></label>
+                    <label><input id="triple-tornado" name="filter" type="radio"><img alt="トリプルトルネード" src="images/special/triple-tornado.PNG"></label>
+                    <label><input id="energy-stand" name="filter" type="radio"><img alt="エナジースタンド" src="images/special/energy-stand.PNG"></label>
+                    <label><input id="dekoi-chirashi" name="filter" type="radio"><img alt="デコイチラシ" src="images/special/dekoi-chirashi.PNG"></label>
+                    <label><input id="teiou-ika" name="filter" type="radio"><img alt="テイオウイカ" src="images/special/teiou-ika.PNG"></label>
+                    <label><input id="ultra-chakuchi" name="filter" type="radio"><img alt="ウルトラチャクチ" src="images/special/ultra-chakuchi.PNG"></label>
+                    <label><input id="suminaga-sheet" name="filter" type="radio"><img alt="スミナガシート" src="images/special/suminaga-sheet.PNG"></label>
                 </div>
                 <div id="word-search">
-                    <button id="clear">W</button>
                     <input id="search" type="text">
                 </div>
             </div>
         </header>
         <main>
-            <h2>結果</h2>
             <div class="weapon-set">
                 <button class="main" data-type="shooter"><img src="images/main/spla-shooter.PNG"></button>
                 <button class="sub"><img alt="キューバンボム" src="images/sub/kyuban-bomb.PNG"></button>
@@ -1187,15 +1184,15 @@
             </div>
             <div>
                 <h2>.96ガロン</h2>
-                <p><mark>攻撃力が非常に高く射程も長い</mark>。連射が遅く拡散が大きい。</p>
+                <p><mark>攻撃力が非常に高く</mark>射程が長い。連射が遅く拡散が大きい。</p>
             </div>
             <div>
                 <h2>.96ガロンデコ</h2>
-                <p><mark>攻撃力が非常に高く射程も長い</mark>。連射が遅く拡散が大きい。</p>
+                <p><mark>攻撃力が非常に高く</mark>射程が長い。連射が遅く拡散が大きい。</p>
             </div>
             <div>
                 <h2>.96ガロン爪</h2>
-                <p><mark>攻撃力が非常に高く射程も長い</mark>。連射が遅く拡散が大きい。</p>
+                <p><mark>攻撃力が非常に高く</mark>射程が長い。連射が遅く拡散が大きい。</p>
             </div>
             <div>
                 <h2>N-ZAP85</h2>
@@ -1207,15 +1204,15 @@
             </div>
             <div>
                 <h2>プライムシューター</h2>
-                <p><mark>攻撃力が高め</mark>で射程が長く拡散も少ない。インク効率が悪い。</p>
+                <p><mark>攻撃力が高め</mark>で射程が長く拡散が少ない。インク効率が悪い。</p>
             </div>
             <div>
                 <h2>プライムシューターコラボ</h2>
-                <p><mark>攻撃力が高め</mark>で射程が長く拡散も少ない。インク効率が悪い。</p>
+                <p><mark>攻撃力が高め</mark>で射程が長く拡散が少ない。インク効率が悪い。</p>
             </div>
             <div>
                 <h2>プライムシューターFRZN</h2>
-                <p><mark>攻撃力が高め</mark>で射程が長く拡散も少ない。インク効率が悪い。</p>
+                <p><mark>攻撃力が高め</mark>で射程が長く拡散が少ない。インク効率が悪い。</p>
             </div>
             <div>
                 <h2>ジェットスイーパー</h2>
@@ -1291,15 +1288,15 @@
             </div>
             <div>
                 <h2>ダイナモローラー</h2>
-                <p><mark>攻撃力が高く</mark>射程が長い。振りも塗り進みも遅い。</p>
+                <p><mark>攻撃力が高く</mark>射程が長い。振りと塗り進みが遅い。</p>
             </div>
             <div>
                 <h2>ダイナモローラーテスラ</h2>
-                <p><mark>攻撃力が高く</mark>射程が長い。振りも塗り進みも遅い。</p>
+                <p><mark>攻撃力が高く</mark>射程が長い。振りと塗り進みが遅い。</p>
             </div>
             <div>
                 <h2>ダイナモローラー冥</h2>
-                <p><mark>攻撃力が高く</mark>射程が長い。振りも塗り進みも遅い。</p>
+                <p><mark>攻撃力が高く</mark>射程が長い。振りと塗り進みが遅い。</p>
             </div>
             <div>
                 <h2>ヴァリアブルローラー</h2>
@@ -1587,15 +1584,15 @@
             </div>
             <div>
                 <h2>スパイガジェット</h2>
-                <p>傘を<mark>開いたまま連射ができる</mark>。傘はパージできない。攻撃力は低く傘の耐久性も低い。</p>
+                <p>傘を<mark>開いたまま連射ができる</mark>。傘はパージできない。攻撃力が低く傘の耐久性が低い。</p>
             </div>
             <div>
                 <h2>スパイガジェットソレーラ</h2>
-                <p>傘を<mark>開いたまま連射ができる</mark>。傘はパージできない。攻撃力は低く傘の耐久性も低い。</p>
+                <p>傘を<mark>開いたまま連射ができる</mark>。傘はパージできない。攻撃力が低く傘の耐久性が低い。</p>
             </div>
             <div>
                 <h2>スパイガジェット繚</h2>
-                <p>傘を<mark>開いたまま連射ができる</mark>。傘はパージできない。攻撃力は低く傘の耐久性も低い。</p>
+                <p>傘を<mark>開いたまま連射ができる</mark>。傘はパージできない。攻撃力が低く傘の耐久性が低い。</p>
             </div>
             <div>
                 <h2>24式張替傘・甲</h2>
@@ -1671,11 +1668,11 @@
             </div>
             <div>
                 <h2>パブロ</h2>
-                <p>振りも塗り進みも<mark>とても速い</mark>。攻撃力が低い。</p>
+                <p>振りと塗り進みが<mark>とても速い</mark>。攻撃力が低い。</p>
             </div>
             <div>
                 <h2>パブロ・ヒュー</h2>
-                <p>振りも塗り進みも<mark>とても速い</mark>。攻撃力が低い。</p>
+                <p>振りと塗り進みが<mark>とても速い</mark>。攻撃力が低い。</p>
             </div>
             <div>
                 <h2>ホクサイ</h2>
@@ -1885,7 +1882,7 @@
             </div>
             <div>
                 <h2>ショクワンダー</h2>
-                <p>ステージを<mark>飛び回ることができる触腕</mark>を持った姿に変身する。</p>
+                <p>ステージを<mark>飛び回る</mark>事ができる触腕を持った姿に変身する。</p>
             </div>
             <div>
                 <h2>マルチミサイル</h2>
@@ -1893,7 +1890,7 @@
             </div>
             <div>
                 <h2>アメフラシ</h2>
-                <p>少しずつ前進しながら<mark>インクを降らせる雨雲</mark>を発生させる。</p>
+                <p>少しずつ前進しながら<mark>インクを降らせる</mark>雨雲を発生させる。</p>
             </div>
             <div>
                 <h2>ナイスダマ</h2>
