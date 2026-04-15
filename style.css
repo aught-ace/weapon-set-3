@@ -32,6 +32,8 @@
 }
 .weapon-set .name span {
     font-weight: bold;
+    line-height: 1rem;
+    vertical-align: middle;
 }
 
 .weapon-set .main img {
