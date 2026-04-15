@@ -29,6 +29,8 @@
     inline-size: 100%;
     block-size: 100%;
     padding-inline-start: 0.25rem;
+}
+.weapon-set .name span {
     font-weight: bold;
 }
 
@@ -37,12 +39,35 @@
     block-size: 3rem;
     vertical-align: middle;
 }
+.weapon-set .sub span,
+.weapon-set .special span {
+    background-color: #161616;
+    inline-size: 2rem;
+    block-size: 2rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1rem;
+}
 .weapon-set .sub img,
 .weapon-set .special img {
     inline-size: 2rem;
     block-size: 2rem;
-    border-radius: 0.25rem;
     vertical-align: middle;
+    line-height: 1rem;
+}
+
+/* 隠す */
+:has(#view-main:not(:checked)) .weapon-set .main img,
+:has(#view-main:not(:checked)) .weapon-set .name span {
+    visibility: hidden;
+}
+:has(#view-sub:not(:checked)) .weapon-set .sub img {
+    visibility: hidden;
+}
+:has(#view-special:not(:checked)) .weapon-set .special img {
+    visibility: hidden;
 }
 
 /* ブキを押した時の表示 */
@@ -53,7 +78,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 6.5em 6.5em;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     overflow: hidden;
     position: fixed;
     cursor: default;
@@ -74,7 +99,7 @@
     color: #FFF;
     margin-inline: 0.5em;
     margin-block-end: 0.5em;
-    border-radius: 0.25em;
+    border-radius: 0.5em;
     line-height: 1em;
     overflow: hidden;
 }
@@ -83,7 +108,7 @@
     color: #FFF;
     margin-inline: 0.5em;
     margin-block-end: 0.5em;
-    border-radius: 0.25em;
+    border-radius: 0.5em;
     line-height: 1em;
     overflow: hidden;
 }
@@ -190,21 +215,40 @@ mark {
     border: none 0 #000;
 }
 
+#clear {
+    display: grid;
+    grid-template-columns: 2rem 2rem 2rem 1fr;
+    grid-template-rows: 2rem;
+}
 #clear label {
     background-color: #161616;
     text-align: center;
     block-size: 2rem;
     inline-size: 100%;
     opacity: 0.2;
+    font-weight: bold;
 }
-#clear span {
+#clear .check {
     background-color: #999;
     color: #161616;
-    line-height: 1em;
-    font-size: 0.6rem;
+    line-height: 1.6em;
+    inline-size: 1.6em;
+    block-size: 1.6em;
+    font-size: 0.8rem;
     font-weight: bold;
-    padding: 0.25rem;
     border-radius: 0.125rem;
+}
+#clear .radio {
+    color: #999;
+    font-weight: bold;
+    font-size: 0.8rem;
+    /*
+    border: solid 0.125em #999;
+    inline-size: 2em;
+    block-size: 2em;
+    line-height: 1.75em;
+    border-radius: 0.125rem;
+    */
 }
 
 label:has(input[name="type"]) {
@@ -243,14 +287,17 @@ label:has(:checked) img {
 input[type="radio"] {
     display: none;
 }
+input[type="checkbox"] {
+    display: none;
+}
 
 #title {
     display: grid;
-    grid-template-columns: 14rem 1fr;
+    grid-template-columns: 12.5rem 1fr;
     grid-template-rows: 3rem;
 }
 h1 {
-    inline-size: 14rem;
+    inline-size: 12.5rem;
     font-size: 2rem;
     font-weight: bold;
     line-height: 1.5rem;
@@ -264,11 +311,10 @@ h1 {
     vertical-align: middle;
 }
 header p {
-    color: #999;
+    color: #99F;
     font-size: 0.6rem;
-    line-height: 1em;
+    line-height: 3rem;
     text-align: right;
-    padding-block-start: 1.25rem;
 }
 
 header h2,
@@ -315,7 +361,7 @@ html {
     scrollbar-color: #666 transparent;
     text-size-adjust: 100%;
     font-size: calc(var(--size) / 25.1);
-    --size: min(calc(100svi), 6in);
+    --size: min(calc(100svi), 7.5in);
 }
 
 * {
