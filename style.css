@@ -28,6 +28,7 @@
 .weapon-set .name {
     inline-size: 100%;
     block-size: 100%;
+    line-height: 1rem;
     padding-inline-start: 0.25rem;
 }
 .weapon-set .name span {
