@@ -135,6 +135,12 @@ mark {
 }
 
 /* フィルター */
+#input {
+    background-color: #161616;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
 .type-filter {
     background-color: #292e34;
     display: grid;
@@ -160,16 +166,20 @@ mark {
     line-height: 1rem;
 }
 
-#word-search {
+#word {
+    inline-size: 100%;
+    block-size: 100%;
+    padding: 0;
     background-color: #292e34;
 }
 #search {
     inline-size: 100%;
     block-size: 100%;
     background-color: #292e34;
-    color: #BBB;
+    color: #CCC;
     padding-inline: 0.25rem;
-    border-style: none;
+    padding-block: 0;
+    border: none 0 #000;
 }
 
 #clear label {
@@ -180,12 +190,6 @@ mark {
     inline-size: 100%;
     opacity: 0.6;
     font-size: 0.6rem;
-}
-
-#input {
-    background-color: #161616;
-    border-radius: 0.5rem;
-    overflow: hidden;
 }
 
 label:has(input[name="type"]) {
