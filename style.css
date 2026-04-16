@@ -29,18 +29,16 @@
     inline-size: 100%;
     block-size: 100%;
     line-height: 1rem;
-    padding-inline-start: 0.25rem;
+    padding-inline-start: 0.5rem;
 }
 .weapon-set .name span {
     font-weight: bold;
     line-height: 1rem;
-    vertical-align: middle;
 }
 
 .weapon-set .main img {
     inline-size: 3rem;
     block-size: 3rem;
-    vertical-align: middle;
 }
 .weapon-set .sub span,
 .weapon-set .special span {
@@ -50,26 +48,24 @@
     border-radius: 0.25rem;
     overflow: hidden;
     display: inline-block;
-    vertical-align: middle;
     line-height: 1rem;
 }
 .weapon-set .sub img,
 .weapon-set .special img {
     inline-size: 2rem;
     block-size: 2rem;
-    vertical-align: middle;
     line-height: 1rem;
 }
 
 /* 隠す */
-:has(#view-main:not(:checked)) .weapon-set .main img,
-:has(#view-main:not(:checked)) .weapon-set .name span {
+:has(#main-view:not(:checked)) .weapon-set .main img,
+:has(#main-view:not(:checked)) .weapon-set .name span {
     visibility: hidden;
 }
-:has(#view-sub:not(:checked)) .weapon-set .sub img {
+:has(#sub-view:not(:checked)) .weapon-set .sub img {
     visibility: hidden;
 }
-:has(#view-special:not(:checked)) .weapon-set .special img {
+:has(#special-view:not(:checked)) .weapon-set .special img {
     visibility: hidden;
 }
 
@@ -102,7 +98,7 @@
     color: #FFF;
     margin-inline: 0.5em;
     margin-block-end: 0.5em;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
     line-height: 1em;
     overflow: hidden;
 }
@@ -111,7 +107,7 @@
     color: #FFF;
     margin-inline: 0.5em;
     margin-block-end: 0.5em;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
     line-height: 1em;
     overflow: hidden;
 }
@@ -121,10 +117,6 @@
 #description .sub p,
 #description .special p {
     padding-inline: 0.5em;
-}
-
-#description img {
-    vertical-align: middle;
 }
 
 #description .main img {
@@ -140,7 +132,6 @@
 #description h2 {
     color: #FFF;
     font-weight: bold;
-    vertical-align: middle;
     inline-size: fit-content;
     display: inline-block;
 }
@@ -160,6 +151,7 @@
 mark {
     background-color: transparent;
     color: #F93;
+    vertical-align: baseline;
     padding: 0;
     margin: 0;
     border-style: none;
@@ -204,16 +196,18 @@ mark {
 
 #word {
     inline-size: 100%;
-    block-size: 100%;
+    block-size: 2rem;
+    line-height: 2rem;
     padding: 0;
     background-color: #292e34;
 }
 #search {
     inline-size: 100%;
     block-size: 100%;
-    background-color: #292e34;
+    line-height: 1rem;
+    background-color: transparent;
     color: #CCC;
-    padding-inline: 0.25rem;
+    padding-inline: 0.5rem;
     padding-block: 0;
     border: none 0 #000;
 }
@@ -226,7 +220,7 @@ mark {
 #clear label {
     background-color: #161616;
     text-align: center;
-    block-size: 2rem;
+    block-size: 100%;
     inline-size: 100%;
     padding-inline-start: 0.25rem;
     opacity: 0.2;
@@ -235,12 +229,21 @@ mark {
 #clear .check {
     background-color: #999;
     color: #161616;
-    line-height: 1.6em;
-    inline-size: 1.6em;
-    block-size: 1.6em;
-    font-size: 0.8rem;
     font-weight: bold;
     border-radius: 0.125rem;
+}
+#clear #main-view + .check {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    line-height: 1.25rem;
+    font-size: 0.8rem;
+}
+#clear #sub-view + .check,
+#clear #special-view + .check {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    line-height: 1.25rem;
+    font-size: 0.8rem;
 }
 #clear .radio {
     color: #999;
@@ -281,7 +284,6 @@ label:has(:checked) {
 label img {
     inline-size: 100%;
     block-size: 100%;
-    vertical-align: middle;
 }
 label:has(:checked) img {
     inline-size: 100%;
@@ -305,17 +307,15 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
     line-height: 1.5rem;
-    vertical-align: middle;
 }
 .yellow {
     color: #FF0;
     font-size: 3rem;
     font-weight: bold;
     line-height: 1em;
-    vertical-align: middle;
 }
 header p {
-    color: #99F;
+    color: #99C;
     font-size: 0.6rem;
     line-height: 3rem;
     text-align: right;
@@ -330,13 +330,22 @@ main h2 {
 }
 
 header,
-main {
+main,
+footer {
     inline-size: var(--size);
     padding-inline: 0.25rem;
     margin-inline: auto;
 }
 main {
     padding-block-end: 0.25rem;
+}
+footer {
+    color: #666;
+    text-align: right;
+    font-size: 0.6rem;
+}
+.ace {
+    color: #C00;
 }
 
 .desc {
@@ -375,6 +384,7 @@ html {
     font-size: 1em;
     font-weight: normal;
     font-family: sans-serif;
+    vertical-align: middle;
     word-spacing: 0.125rem;
     word-break: break-all;
     letter-spacing: 0;
